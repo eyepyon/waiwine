@@ -83,6 +83,30 @@ async def get_available_providers() -> Dict[str, Any]:
         raise HTTPException(status_code=500, detail=str(e))
 
 
+@auth_router.get("/providers/debug")
+async def debug_providers() -> Dict[str, Any]:
+    """Debug endpoint to check provider configurations."""
+    try:
+        from ..config.settings import Config
+        
+        google_config = oauth_config.get_provider_config('google')
+        
+        return {
+            "google_client_id_set": bool(Config.GOOGLE_CLIENT_ID),
+            "google_client_secret_set": bool(Config.GOOGLE_CLIENT_SECRET),
+            "google_client_id_length": len(Config.GOOGLE_CLIENT_ID) if Config.GOOGLE_CLIENT_ID else 0,
+            "google_config_exists": google_config is not None,
+            "google_config_enabled": google_config.get('enabled') if google_config else False,
+            "all_providers": list(oauth_config.get_all_providers().keys()),
+            "enabled_providers": list(oauth_config.get_enabled_providers().keys())
+        }
+    except Exception as e:
+        return {
+            "error": str(e),
+            "error_type": type(e).__name__
+        }
+
+
 @auth_router.post("/authorize", response_model=AuthUrlResponse)
 async def get_authorization_url(request: AuthUrlRequest) -> AuthUrlResponse:
     """Get OAuth authorization URL for a provider."""
