@@ -5,7 +5,7 @@ from fastapi import APIRouter, HTTPException, Query
 from typing import Dict, Any, List, Optional
 from pydantic import BaseModel
 
-from .multilingual_service import MultilingualService
+from services.multilingual_service import MultilingualService
 
 
 # Request/Response models

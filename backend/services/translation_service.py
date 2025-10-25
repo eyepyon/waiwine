@@ -8,9 +8,9 @@ import io
 import logging
 from typing import Dict, List, Optional, Any
 from sqlalchemy.orm import Session
-from backend.models.user import User, TranslationSettings
-from backend.models.database import get_db
-from backend.config.settings import get_config
+from models.user import User, TranslationSettings
+from models.database import get_db
+from config.settings import get_config
 
 logger = logging.getLogger(__name__)
 config = get_config()

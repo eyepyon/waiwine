@@ -7,10 +7,10 @@ from typing import List, Dict, Any
 from pydantic import BaseModel
 import logging
 
-from backend.models.database import get_db
-from backend.models.user import User, TranslationSettings
-from backend.services.translation_service import translation_service
-from backend.services.session_manager import get_current_user
+from models.database import get_db
+from models.user import User, TranslationSettings
+from services.translation_service import translation_service
+from services.session_manager import get_current_user
 
 logger = logging.getLogger(__name__)
 

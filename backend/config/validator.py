@@ -4,7 +4,7 @@ Environment variable validation system.
 import os
 import sys
 from typing import List, Dict, Any
-from .settings import Config
+from config.settings import Config
 
 class ConfigValidator:
     """Environment variable validation and checking."""

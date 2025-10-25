@@ -8,11 +8,11 @@ from fastapi import APIRouter, UploadFile, File, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
-from backend.services.wine_recognition_service import wine_recognition_service
-from backend.services.wine_management_service import wine_management_service
-from backend.services.session_manager import get_current_user
-from backend.models.user import User
-from backend.utils.database import get_db
+from services.wine_recognition_service import wine_recognition_service
+from services.wine_management_service import wine_management_service
+from services.session_manager import get_current_user
+from models.user import User
+from utils.database import get_db
 
 logger = logging.getLogger(__name__)
 
@@ -116,7 +116,7 @@ async def get_wine_info(
     """
     try:
         # Import multilingual service
-        from .multilingual_service import MultilingualService
+        from services.multilingual_service import MultilingualService
         multilingual_service = MultilingualService()
         
         # Get localized wine info

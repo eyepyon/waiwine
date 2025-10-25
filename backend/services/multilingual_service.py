@@ -5,8 +5,8 @@ from typing import Dict, Any, Optional, List
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
 
-from ..models.wine import Wine, Translation, VoiceProfile
-from ..models.database import get_db
+from models.wine import Wine, Translation, VoiceProfile
+from models.database import get_db
 
 
 class MultilingualService:

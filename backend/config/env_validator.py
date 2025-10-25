@@ -6,7 +6,7 @@ import sys
 import re
 from typing import Dict, List, Optional, Any, Tuple
 from urllib.parse import urlparse
-from .settings import Config
+from config.settings import Config
 
 class ValidationError(Exception):
     """Custom exception for validation errors."""

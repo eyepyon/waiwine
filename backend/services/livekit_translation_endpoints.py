@@ -6,9 +6,9 @@ from typing import Dict, List, Optional
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from .livekit_translation_service import livekit_translation_service
-from .auth_service import AuthenticationService
-from ..models.database import get_db
+from services.livekit_translation_service import livekit_translation_service
+from services.auth_service import AuthenticationService
+from models.database import get_db
 
 # Request/Response models
 class StartTranslationRequest(BaseModel):

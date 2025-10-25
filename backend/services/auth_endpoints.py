@@ -7,8 +7,8 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel
 
-from .auth_service import AuthenticationService
-from ..config.oauth_config import OAuthConfig
+from services.auth_service import AuthenticationService
+from config.oauth_config import OAuthConfig
 
 
 # Request/Response models
@@ -87,7 +87,7 @@ async def get_available_providers() -> Dict[str, Any]:
 async def debug_providers() -> Dict[str, Any]:
     """Debug endpoint to check provider configurations."""
     try:
-        from ..config.settings import Config
+        from config.settings import Config
         
         google_config = oauth_config.get_provider_config('google')
         

@@ -4,7 +4,7 @@ Wine and room-related models.
 from sqlalchemy import Column, String, Integer, Float, JSON, DateTime, ForeignKey, Text
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from .database import Base
+from models.database import Base
 
 class Wine(Base):
     """Wine model with multilingual support."""

@@ -13,9 +13,9 @@ from google.oauth2 import service_account
 import requests
 from sqlalchemy.orm import Session
 
-from backend.config.settings import get_config
-from backend.models.wine import Wine
-from backend.utils.database import get_db
+from config.settings import get_config
+from models.wine import Wine
+from utils.database import get_db
 
 logger = logging.getLogger(__name__)
 

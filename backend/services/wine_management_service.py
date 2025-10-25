@@ -9,9 +9,9 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from sqlalchemy import or_, and_, func
 
-from backend.models.wine import Wine, Translation
-from backend.utils.database import get_db
-from backend.config.settings import get_config
+from models.wine import Wine, Translation
+from utils.database import get_db
+from config.settings import get_config
 
 logger = logging.getLogger(__name__)
 

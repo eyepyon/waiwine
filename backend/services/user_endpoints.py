@@ -6,8 +6,8 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import Dict, Any, Optional, List
 from pydantic import BaseModel, EmailStr
 
-from .user_service import UserService
-from .auth_service import AuthenticationService
+from services.user_service import UserService
+from services.auth_service import AuthenticationService
 
 
 # Request/Response models

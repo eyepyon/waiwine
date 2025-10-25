@@ -5,7 +5,7 @@ from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, Boolean, F
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from datetime import datetime
-from .database import Base
+from models.database import Base
 
 class User(Base):
     """User model with multi-language support."""

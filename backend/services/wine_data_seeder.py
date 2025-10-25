@@ -6,8 +6,8 @@ import logging
 from typing import List, Dict, Any
 from sqlalchemy.orm import Session
 
-from backend.models.wine import Wine, Translation
-from backend.utils.database import get_db
+from models.wine import Wine, Translation
+from utils.database import get_db
 
 logger = logging.getLogger(__name__)
 

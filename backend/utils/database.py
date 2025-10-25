@@ -3,7 +3,7 @@ Database utilities and session management.
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
-from backend.config.settings import get_config
+from config.settings import get_config
 
 config = get_config()
 

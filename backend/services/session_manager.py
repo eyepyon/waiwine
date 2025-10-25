@@ -5,7 +5,7 @@ import jwt
 import time
 from typing import Dict, Any, Optional, Set
 from datetime import datetime, timedelta
-from ..config.settings import Config
+from config.settings import Config
 
 
 class SessionManager:

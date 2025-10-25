@@ -6,10 +6,10 @@ from fastapi import APIRouter, HTTPException, Depends, status
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from backend.models.database import get_db
-from backend.services.livekit_service import livekit_service
-from backend.services.session_manager import get_current_user
-from backend.models.user import User
+from models.database import get_db
+from services.livekit_service import livekit_service
+from services.session_manager import get_current_user
+from models.user import User
 
 router = APIRouter(prefix="/api/rooms", tags=["rooms"])
 

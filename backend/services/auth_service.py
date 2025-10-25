@@ -13,11 +13,11 @@ from urllib.parse import urlencode
 import requests
 from sqlalchemy.orm import Session
 
-from ..models.user import User, OAuthProvider, TranslationSettings
-from ..models.database import get_db
-from ..config.oauth_config import OAuthConfig, OAuthStateManager
-from ..config.settings import Config
-from .session_manager import session_manager
+from models.user import User, OAuthProvider, TranslationSettings
+from models.database import get_db
+from config.oauth_config import OAuthConfig, OAuthStateManager
+from config.settings import Config
+from services.session_manager import session_manager
 
 
 class AuthenticationService:

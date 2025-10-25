@@ -7,9 +7,9 @@ import logging
 from typing import Dict, Set
 from fastapi import WebSocket, WebSocketDisconnect, Depends
 from sqlalchemy.orm import Session
-from backend.models.database import get_db
-from backend.services.translation_service import translation_service
-from backend.services.session_manager import get_current_user_from_token
+from models.database import get_db
+from services.translation_service import translation_service
+from services.session_manager import get_current_user_from_token
 
 logger = logging.getLogger(__name__)
 

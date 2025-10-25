@@ -5,8 +5,8 @@ from typing import Dict, Any, Optional, List
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
 
-from ..models.user import User, OAuthProvider, TranslationSettings
-from ..models.database import get_db
+from models.user import User, OAuthProvider, TranslationSettings
+from models.database import get_db
 
 
 class UserService:

@@ -3,7 +3,7 @@ OAuth provider configuration and management.
 """
 import os
 from typing import Dict, Any, Optional, List
-from .settings import Config
+from config.settings import Config
 
 class OAuthConfig:
     """OAuth provider configuration management."""

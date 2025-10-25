@@ -9,10 +9,10 @@ from livekit import api
 from sqlalchemy.orm import Session
 from sqlalchemy import and_
 
-from backend.config.settings import get_config
-from backend.models.database import get_db
-from backend.models.wine import RoomSession, Wine
-from backend.models.user import User
+from config.settings import get_config
+from models.database import get_db
+from models.wine import RoomSession, Wine
+from models.user import User
 
 class LiveKitRoomService:
     """Service for managing LiveKit rooms and tokens."""

@@ -19,8 +19,8 @@ from livekit.agents.pipeline import VoicePipelineAgent
 from livekit.plugins import deepgram, openai, silero
 from sqlalchemy.orm import Session
 
-from backend.models.user import User, TranslationSettings
-from backend.config.settings import get_config
+from models.user import User, TranslationSettings
+from config.settings import get_config
 
 logger = logging.getLogger(__name__)
 config = get_config()
