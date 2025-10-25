@@ -1,5 +1,5 @@
 """
-Real-time translation service with speech recognition and text-to-speech.
+Real-time translation service with speech recognition and text-to-speech using LiveKit.
 """
 import asyncio
 import json
@@ -7,9 +7,6 @@ import base64
 import io
 import logging
 from typing import Dict, List, Optional, Any
-from google.cloud import speech
-from google.cloud import translate_v2 as translate
-from google.cloud import texttospeech
 from sqlalchemy.orm import Session
 from backend.models.user import User, TranslationSettings
 from backend.models.database import get_db
@@ -17,6 +14,9 @@ from backend.config.settings import get_config
 
 logger = logging.getLogger(__name__)
 config = get_config()
+
+# LiveKit Agents will handle STT, Translation, and TTS
+# This service coordinates the translation workflow
 
 class SpeechRecognitionService:
     """Google Speech-to-Text integration for real-time recognition."""

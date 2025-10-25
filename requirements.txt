@@ -1,5 +1,6 @@
 # Core framework dependencies
 livekit
+livekit-agents[deepgram,openai,silero]
 streamlit
 fastapi
 uvicorn

@@ -60,6 +60,10 @@ app.include_router(translation_router)
 from .services.multilingual_endpoints import multilingual_router
 app.include_router(multilingual_router)
 
+# Import and include LiveKit translation router
+from .services.livekit_translation_endpoints import translation_router as livekit_translation_router
+app.include_router(livekit_translation_router)
+
 @app.websocket("/ws/translation/{user_id}/{room_id}")
 async def websocket_translation_endpoint(
     websocket: WebSocket,

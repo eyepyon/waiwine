@@ -16,6 +16,10 @@ class Config:
     LIVEKIT_API_SECRET: str = os.getenv('LIVEKIT_API_SECRET', '')
     LIVEKIT_URL: str = os.getenv('LIVEKIT_URL', 'ws://localhost:7880')
     
+    # LiveKit Agents - AI Services
+    DEEPGRAM_API_KEY: str = os.getenv('DEEPGRAM_API_KEY', '')
+    OPENAI_API_KEY: str = os.getenv('OPENAI_API_KEY', '')
+    
     # OAuth Provider Configuration
     GOOGLE_CLIENT_ID: str = os.getenv('GOOGLE_CLIENT_ID', '')
     GOOGLE_CLIENT_SECRET: str = os.getenv('GOOGLE_CLIENT_SECRET', '')
