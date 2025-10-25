@@ -22,12 +22,17 @@
         <p class="hero-subtitle">{{ $t('app.subtitle') }}</p>
         
         <div class="action-buttons">
-          <router-link to="/login" class="primary-btn">
+          <router-link to="/room/guest-room" class="primary-btn">
+            <span class="btn-icon">💬</span>
+            {{ $t('landing.try_as_guest') }}
+          </router-link>
+          
+          <router-link to="/login" class="secondary-btn">
             <span class="btn-icon">🚀</span>
             {{ $t('landing.get_started') }}
           </router-link>
           
-          <button @click="scrollToFeatures" class="secondary-btn">
+          <button @click="scrollToFeatures" class="tertiary-btn">
             <span class="btn-icon">ℹ️</span>
             {{ $t('landing.learn_more') }}
           </button>
@@ -222,7 +227,7 @@ export default {
   flex-wrap: wrap;
 }
 
-.primary-btn, .secondary-btn {
+.primary-btn, .secondary-btn, .tertiary-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -249,12 +254,23 @@ export default {
 }
 
 .secondary-btn {
+  background: #007bff;
+  color: white;
+}
+
+.secondary-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.tertiary-btn {
   background: rgba(255, 255, 255, 0.2);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.secondary-btn:hover {
+.tertiary-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
@@ -417,7 +433,7 @@ export default {
     align-items: center;
   }
   
-  .primary-btn, .secondary-btn {
+  .primary-btn, .secondary-btn, .tertiary-btn {
     width: 100%;
     max-width: 300px;
     justify-content: center;

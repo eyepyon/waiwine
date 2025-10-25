@@ -34,13 +34,13 @@ const routes = [
     path: '/camera',
     name: 'Camera',
     component: Camera,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: false }
   },
   {
     path: '/room/:wineId',
     name: 'VideoRoom',
     component: VideoRoom,
-    meta: { requiresAuth: true },
+    meta: { requiresAuth: false },
     props: true
   },
   {

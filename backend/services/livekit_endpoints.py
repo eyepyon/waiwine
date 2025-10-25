@@ -17,6 +17,11 @@ class JoinRoomRequest(BaseModel):
     """Request model for joining a room."""
     wine_id: str
 
+class GuestJoinRoomRequest(BaseModel):
+    """Request model for guest joining a room."""
+    wine_id: str
+    guest_name: str = ""
+
 class JoinRoomResponse(BaseModel):
     """Response model for joining a room."""
     room_name: str
@@ -67,6 +72,40 @@ async def join_wine_room(
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to join room: {str(e)}"
+        )
+
+@router.post("/join/guest", response_model=JoinRoomResponse)
+async def join_room_as_guest(
+    request: GuestJoinRoomRequest,
+    db: Session = Depends(get_db)
+):
+    """
+    Join a wine room as a guest (no authentication required).
+    
+    Guests can join rooms without logging in, but have limited session time.
+    """
+    try:
+        # Generate guest token
+        room_name = livekit_service.generate_room_name(request.wine_id)
+        access_token = livekit_service.generate_access_token(
+            user_id="",  # Will be generated in the function
+            room_name=room_name,
+            user_name=request.guest_name,
+            is_guest=True
+        )
+        
+        return JoinRoomResponse(
+            room_name=room_name,
+            access_token=access_token,
+            livekit_url=livekit_service.livekit_url,
+            wine_id=request.wine_id,
+            participants_count=0  # Guest doesn't have access to participant count
+        )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to join room as guest: {str(e)}"
         )
 
 @router.post("/leave")

@@ -30,10 +30,16 @@ class LiveKitRoomService:
         """Generate a unique room name for a wine."""
         return f"wine-{wine_id}"
     
-    def generate_access_token(self, user_id: str, room_name: str, user_name: str = "") -> str:
+    def generate_access_token(self, user_id: str, room_name: str, user_name: str = "", is_guest: bool = False) -> str:
         """Generate LiveKit access token for a user to join a room."""
         try:
             token = api.AccessToken(self.api_key, self.api_secret)
+            
+            # For guest users, generate a unique ID
+            if is_guest:
+                user_id = f"guest-{uuid.uuid4().hex[:8]}"
+                user_name = user_name or f"Guest {uuid.uuid4().hex[:4]}"
+            
             token.with_identity(user_id)
             token.with_name(user_name)
             token.with_grants(api.VideoGrants(
@@ -44,8 +50,9 @@ class LiveKitRoomService:
                 can_publish_data=True
             ))
             
-            # Token expires in 24 hours
-            token.with_ttl(timedelta(hours=24))
+            # Token expires in 24 hours for registered users, 2 hours for guests
+            ttl_hours = 2 if is_guest else 24
+            token.with_ttl(timedelta(hours=ttl_hours))
             
             return token.to_jwt()
         except Exception as e:
