@@ -222,7 +222,7 @@ import {
   useLocalParticipant,
   useRemoteParticipants,
   useTracks
-} from '@livekit/components-vue'
+} from 'livekit-client'
 import { Track, Room, RoomEvent } from 'livekit-client'
 import { useAuthStore } from '@/stores/auth'
 import ParticipantsList from './ParticipantsList.vue'
