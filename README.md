@@ -2,6 +2,16 @@
 
 LiveKitを使用したWebビデオチャットアプリケーションです。
 
+DEMO  
+http://wai.wine:3000/  
+
+LP  
+https://www.wai.wine/  
+
+Documents  
+https://www.wai.wine/wine20251025.pdf  
+
+
 ## 機能
 
 - 🔐 Googleログイン認証
