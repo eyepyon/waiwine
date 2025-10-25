@@ -1,0 +1,48 @@
+# Core framework dependencies
+livekit
+streamlit
+fastapi
+uvicorn
+websockets
+
+# Environment and configuration
+python-dotenv
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary
+
+# Authentication and OAuth
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
+requests-oauthlib
+PyJWT
+
+# Google Cloud APIs
+google-cloud-vision
+google-cloud-translate
+google-cloud-speech
+google-cloud-texttospeech
+
+# HTTP and API clients
+requests
+httpx
+aiohttp
+
+# Data processing and validation
+pydantic
+marshmallow
+
+# Utilities
+python-multipart
+Pillow
+numpy
+
+# Development and testing
+pytest
+pytest-asyncio
+black
+flake8
+mypy

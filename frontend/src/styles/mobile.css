@@ -1,0 +1,245 @@
+/* Mobile-specific global styles for wine chat app */
+
+/* Prevent zoom on form inputs on iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .btn,
+  .control-btn,
+  .media-btn {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+  
+  /* Add visual feedback for touch */
+  button:active,
+  .btn:active,
+  .control-btn:active,
+  .media-btn:active {
+    opacity: 0.7;
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+  }
+}
+
+/* Optimize scrolling on mobile */
+.video-grid,
+.settings-content,
+.translation-settings-panel {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent text selection on interactive elements */
+.camera-controls,
+.room-bottom-controls,
+.media-controls,
+.additional-controls,
+.video-tile {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Improve visibility on mobile */
+@media (max-width: 768px) {
+  /* Larger text for better readability */
+  .participant-name,
+  .wine-name,
+  .room-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  /* Better contrast for mobile */
+  .camera-instructions,
+  .subtitle-content {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+  }
+  
+  /* Optimize button spacing */
+  .camera-controls,
+  .media-controls,
+  .preview-controls {
+    gap: 1rem;
+  }
+  
+  /* Better visual hierarchy */
+  .error-message,
+  .loading-text {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+}
+
+/* Handle safe areas on newer mobile devices */
+@supports (padding: max(0px)) {
+  .room-header,
+  .room-bottom-controls {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  
+  .room-header {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .room-bottom-controls {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  .translation-settings-panel {
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Optimize for different screen densities */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .capture-icon,
+  .control-btn i,
+  .media-btn i {
+    font-size: 1.2em;
+  }
+  
+  .viewfinder {
+    border-width: 1px;
+  }
+  
+  .corner {
+    border-width: 2px;
+  }
+}
+
+/* Landscape optimizations for mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Compact header in landscape */
+  .room-header {
+    min-height: 60px;
+  }
+  
+  /* Optimize video grid for landscape */
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  /* Compact controls in landscape */
+  .room-bottom-controls {
+    padding: 0.5rem 1rem;
+  }
+  
+  .media-btn {
+    padding: 0.5rem;
+  }
+  
+  .media-btn span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small screens (older phones) */
+@media (max-width: 360px) {
+  .camera-container {
+    border-radius: 8px;
+  }
+  
+  .video-tile {
+    border-radius: 6px;
+  }
+  
+  .translation-settings-panel {
+    border-radius: 0;
+  }
+  
+  .subtitle-content {
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+  
+  .capture-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner,
+  .speaking {
+    animation: none;
+  }
+  
+  .capture-btn:active,
+  .control-btn:active,
+  .media-btn:active {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .camera-overlay,
+  .subtitle-content,
+  .translation-settings-panel {
+    border: 2px solid;
+  }
+  
+  .viewfinder {
+    border-width: 3px;
+  }
+  
+  .corner {
+    border-width: 4px;
+  }
+}
+
+/* Dark mode optimizations for mobile */
+@media (prefers-color-scheme: dark) {
+  .translation-settings-panel {
+    background: #1a1a1a;
+    color: white;
+  }
+  
+  .settings-header {
+    border-bottom-color: #333;
+  }
+  
+  .setting-group {
+    border-bottom-color: #333;
+  }
+  
+  .voice-select,
+  .position-select {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+  }
+}
