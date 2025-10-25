@@ -43,7 +43,16 @@
       <h2 class="section-title">{{ $t('dashboard.quick_actions') }}</h2>
       
       <div class="action-grid">
-        <router-link to="/camera" class="action-card primary">
+        <button @click="joinTestRoom" class="action-card primary action-button">
+          <div class="action-icon">💬</div>
+          <div class="action-content">
+            <h3 class="action-title">{{ $t('room.join_test_room') }}</h3>
+            <p class="action-description">{{ $t('room.test_room_description') }}</p>
+          </div>
+          <div class="action-arrow">→</div>
+        </button>
+        
+        <router-link to="/camera" class="action-card">
           <div class="action-icon">📷</div>
           <div class="action-content">
             <h3 class="action-title">{{ $t('camera.capture_wine_label') }}</h3>
@@ -150,6 +159,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useAuthStore } from '@/stores/auth'
 import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'UserDashboard',
@@ -157,6 +167,7 @@ export default {
   setup() {
     const authStore = useAuthStore()
     const { t } = useI18n()
+    const router = useRouter()
     
     const userStats = ref({
       winesRecognized: 0,
@@ -276,6 +287,25 @@ export default {
       }
     }
     
+    const joinTestRoom = async () => {
+      try {
+        // Create or join a test room without wine recognition
+        const testWineId = 'test-room-001'
+        
+        // Navigate to video room with test wine ID
+        router.push({
+          name: 'VideoRoom',
+          params: { wineId: testWineId },
+          query: { test: 'true' }
+        })
+      } catch (error) {
+        console.error('Failed to join test room:', error)
+        if (window.showToast) {
+          window.showToast(t('room.join_error'), 'error')
+        }
+      }
+    }
+    
     onMounted(() => {
       loadDashboardData()
     })
@@ -288,7 +318,8 @@ export default {
       loading,
       getActivityIcon,
       formatTime,
-      handleActivityAction
+      handleActivityAction,
+      joinTestRoom
     }
   }
 }
@@ -395,6 +426,14 @@ export default {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 2px solid transparent;
+}
+
+.action-button {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .action-card:hover {
