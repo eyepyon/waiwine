@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - WaiWine</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#7B2D26',secondary:'#D4A574'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+<body class="bg-stone-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-wine-glass-line text-white text-xl"></i>
+                    </div>
+                </div>
+                <span class="font-['Pacifico'] text-2xl text-primary">WaiWine</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/04458ec3-34a8-4a40-b12d-a9289ee04df3" data-readdy="true" class="text-gray-700 hover:text-primary transition-colors">ホーム</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">よくある質問</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">使い方ガイド</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">お問い合わせ</a>
+                </nav>
+                
+                <div class="flex items-center bg-gray-100 rounded-full p-1">
+                    <button id="lang-ja" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap bg-primary text-white">
+                        日本語
+                    </button>
+                    <button id="lang-en" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+                        English
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white border-b px-6 py-3">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/04458ec3-34a8-4a40-b12d-a9289ee04df3" data-readdy="true" class="hover:text-primary transition-colors">ホーム</a>
+                <div class="w-4 h-4 flex items-center justify-center mx-2">
+                    <i class="ri-arrow-right-s-line text-gray-400"></i>
+                </div>
+                <span class="text-primary font-medium">プライバシーポリシー</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">プライバシーポリシー</h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    WaiWine は、お客様の個人情報の保護を重要視し、適切な取り扱いに努めています。本プライバシーポリシーでは、個人情報の収集、利用、保護について詳しく説明いたします。
+                </p>
+                <div class="text-sm text-gray-500">
+                    最終更新日：2025年1月15日
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-stone-50 rounded-xl p-8 mb-8">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                        <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-list-check text-primary"></i>
+                            </div>
+                        </div>
+                        目次
+                    </h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <a href="#collection" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">1. 個人情報の収集</a>
+                            <a href="#usage" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">2. 利用目的</a>
+                            <a href="#protection" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">3. 保護方針</a>
+                            <a href="#voice-data" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">4. 音声データの取り扱い</a>
+                            <a href="#third-party" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">5. 第三者との情報共有</a>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="#user-rights" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">6. ユーザーの権利</a>
+                            <a href="#security" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">7. セキュリティ対策</a>
+                            <a href="#cookies" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">8. Cookie の使用</a>
+                            <a href="#legal-basis" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">9. 法的根拠</a>
+                            <a href="#contact" class="block text-gray-700 hover:text-primary transition-colors cursor-pointer">10. お問い合わせ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-12">
+                    <div id="collection" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-database-2-line text-primary"></i>
+                                </div>
+                            </div>
+                            1. 個人情報の収集
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-4">
+                                WaiWine では、以下の個人情報を収集する場合があります：
+                            </p>
+                            <div class="space-y-4">
+                                <div class="bg-stone-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">アカウント情報</h4>
+                                    <ul class="text-gray-600 space-y-1 text-sm">
+                                        <li>• ユーザー名、メールアドレス</li>
+                                        <li>• プロフィール情報（年齢、性別、居住地域）</li>
+                                        <li>• ワインの好み、経験レベル</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-stone-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">利用データ</h4>
+                                    <ul class="text-gray-600 space-y-1 text-sm">
+                                        <li>• アプリの使用履歴、機能利用状況</li>
+                                        <li>• スキャンしたワインの情報</li>
+                                        <li>• チャットの参加履歴（内容は除く）</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-stone-50 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2">技術情報</h4>
+                                    <ul class="text-gray-600 space-y-1 text-sm">
+                                        <li>• デバイス情報（OS、ブラウザ、IP アドレス）</li>
+                                        <li>• 位置情報（許可された場合のみ）</li>
+                                        <li>• Cookie およびトラッキング技術による情報</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="usage" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-target-line text-primary"></i>
+                                </div>
+                            </div>
+                            2. 利用目的
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-4">
+                                収集した個人情報は、以下の目的で利用いたします：
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">サービス提供</h4>
+                                            <p class="text-gray-600 text-sm">アカウント管理、マッチング機能、音声チャット機能の提供</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">カスタマイズ</h4>
+                                            <p class="text-gray-600 text-sm">個人の好みに基づくワイン推奨、マッチング精度の向上</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">サポート</h4>
+                                            <p class="text-gray-600 text-sm">カスタマーサポート、技術的問題の解決</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">改善</h4>
+                                            <p class="text-gray-600 text-sm">サービス品質の向上、新機能の開発</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">セキュリティ</h4>
+                                            <p class="text-gray-600 text-sm">不正利用の防止、アカウントセキュリティの維持</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-3">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                            <div class="w-3 h-3 flex items-center justify-center">
+                                                <i class="ri-check-line text-primary text-xs"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">法的義務</h4>
+                                            <p class="text-gray-600 text-sm">法令遵守、規制当局への報告</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="protection" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-shield-check-line text-primary"></i>
+                                </div>
+                            </div>
+                            3. 保護方針
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                WaiWine は、お客様の個人情報を適切に保護するため、以下の方針に基づいて取り組んでいます：
+                            </p>
+                            <div class="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <i class="ri-lock-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900 mb-2">最小限の収集原則</h4>
+                                            <p class="text-gray-600 text-sm">サービス提供に必要最小限の情報のみを収集し、不要な情報は取得いたしません。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <i class="ri-time-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900 mb-2">適切な保存期間</h4>
+                                            <p class="text-gray-600 text-sm">個人情報は利用目的達成に必要な期間のみ保存し、不要になった情報は安全に削除します。</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-4">
+                                        <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <i class="ri-eye-off-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-gray-900 mb-2">アクセス制限</h4>
+                                            <p class="text-gray-600 text-sm">個人情報へのアクセスは、業務上必要な従業員のみに制限し、適切な管理を行います。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="voice-data" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-mic-line text-primary"></i>
+                                </div>
+                            </div>
+                            4. 音声データの取り扱い
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                音声チャット機能における音声データの取り扱いについて、特に厳格な管理を行っています：
+                            </p>
+                            <div class="space-y-6">
+                                <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+                                    <h4 class="font-semibold text-red-900 mb-3 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-alert-line text-red-600"></i>
+                                        </div>
+                                        重要な原則
+                                    </h4>
+                                    <ul class="text-red-800 space-y-2 text-sm">
+                                        <li>• 音声データはリアルタイム処理のみで使用され、サーバーに保存されません</li>
+                                        <li>• チャット終了と同時に、すべての音声データが自動的に削除されます</li>
+                                        <li>• 翻訳処理は暗号化された環境で行われ、第三者がアクセスできません</li>
+                                    </ul>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="bg-stone-50 rounded-lg p-6">
+                                        <h4 class="font-semibold text-gray-900 mb-3">処理フロー</h4>
+                                        <div class="space-y-3 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <span class="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">1</span>
+                                                <span class="text-gray-600">音声入力の受信</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">2</span>
+                                                <span class="text-gray-600">暗号化処理</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">3</span>
+                                                <span class="text-gray-600">リアルタイム翻訳</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="bg-primary text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">4</span>
+                                                <span class="text-gray-600">相手への配信</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="bg-red-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">5</span>
+                                                <span class="text-gray-600">即座に削除</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-stone-50 rounded-lg p-6">
+                                        <h4 class="font-semibold text-gray-900 mb-3">セキュリティ対策</h4>
+                                        <ul class="text-gray-600 space-y-2 text-sm">
+                                            <li>• エンドツーエンド暗号化</li>
+                                            <li>• SSL/TLS 通信の使用</li>
+                                            <li>• 音声データの匿名化処理</li>
+                                            <li>• 定期的なセキュリティ監査</li>
+                                            <li>• 不正アクセス検知システム</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="third-party" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-share-line text-primary"></i>
+                                </div>
+                            </div>
+                            5. 第三者との情報共有
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                WaiWine は、以下の場合を除き、お客様の個人情報を第三者と共有することはありません：
+                            </p>
+                            <div class="space-y-4">
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-user-settings-line text-primary"></i>
+                                        </div>
+                                        サービス提供パートナー
+                                    </h4>
+                                    <p class="text-gray-600 text-sm mb-2">
+                                        翻訳サービス、クラウドインフラ、決済処理など、サービス提供に必要な業務委託先
+                                    </p>
+                                    <p class="text-gray-500 text-xs">
+                                        ※ 厳格な機密保持契約を締結し、適切な管理を義務付けています
+                                    </p>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-scales-3-line text-primary"></i>
+                                        </div>
+                                        法的要請
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        法令に基づく開示要求、裁判所命令、行政機関からの正式な要請がある場合
+                                    </p>
+                                </div>
+                                <div class="border border-gray-200 rounded-lg p-4">
+                                    <h4 class="font-semibold text-gray-900 mb-2 flex items-center">
+                                        <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                            <i class="ri-check-double-line text-primary"></i>
+                                        </div>
+                                        お客様の同意
+                                    </h4>
+                                    <p class="text-gray-600 text-sm">
+                                        事前にお客様から明示的な同意をいただいた場合
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="user-rights" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-user-heart-line text-primary"></i>
+                                </div>
+                            </div>
+                            6. ユーザーの権利
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                お客様には、個人情報に関して以下の権利があります：
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-4">
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-blue-900 mb-2">アクセス権</h4>
+                                        <p class="text-blue-800 text-sm">保存されている個人情報の内容を確認する権利</p>
+                                    </div>
+                                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-green-900 mb-2">修正権</h4>
+                                        <p class="text-green-800 text-sm">不正確な個人情報の訂正を求める権利</p>
+                                    </div>
+                                    <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-red-900 mb-2">削除権</h4>
+                                        <p class="text-red-800 text-sm">個人情報の削除を求める権利（忘れられる権利）</p>
+                                    </div>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-purple-900 mb-2">処理制限権</h4>
+                                        <p class="text-purple-800 text-sm">個人情報の処理を制限する権利</p>
+                                    </div>
+                                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-orange-900 mb-2">データポータビリティ権</h4>
+                                        <p class="text-orange-800 text-sm">個人情報を他のサービスに移行する権利</p>
+                                    </div>
+                                    <div class="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-gray-900 mb-2">異議申立権</h4>
+                                        <p class="text-gray-800 text-sm">個人情報の処理に異議を申し立てる権利</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-primary/5 rounded-lg p-6 mt-6">
+                                <h4 class="font-semibold text-gray-900 mb-3">権利行使の方法</h4>
+                                <p class="text-gray-600 text-sm mb-3">
+                                    これらの権利を行使される場合は、アプリ内の設定画面またはサポートセンターまでお問い合わせください。本人確認後、原則として 30 日以内に対応いたします。
+                                </p>
+                                <div class="flex items-center space-x-2 text-sm text-gray-600">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-mail-line text-primary"></i>
+                                    </div>
+                                    <span>privacy@waiwine.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="security" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-shield-keyhole-line text-primary"></i>
+                                </div>
+                            </div>
+                            7. セキュリティ対策
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                個人情報を保護するため、以下の技術的・管理的安全措置を講じています：
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center mr-2">
+                                            <div class="w-4 h-4 flex items-center justify-center">
+                                                <i class="ri-code-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        技術的対策
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-600 text-sm">
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>AES-256 暗号化によるデータ保護</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>SSL/TLS 通信の全面採用</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>多要素認証システム</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>不正アクセス検知・防御システム</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>定期的な脆弱性診断</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>データベースの暗号化</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center mr-2">
+                                            <div class="w-4 h-4 flex items-center justify-center">
+                                                <i class="ri-team-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        管理的対策
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-600 text-sm">
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>従業員への定期的なセキュリティ研修</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>アクセス権限の最小権限原則</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>セキュリティインシデント対応体制</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>第三者によるセキュリティ監査</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>データ処理記録の管理</span>
+                                        </li>
+                                        <li class="flex items-start space-x-2">
+                                            <div class="w-4 h-4 flex items-center justify-center mt-0.5">
+                                                <i class="ri-check-line text-green-600 text-xs"></i>
+                                            </div>
+                                            <span>機密保持契約の徹底</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cookies" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-cookie-line text-primary"></i>
+                                </div>
+                            </div>
+                            8. Cookie の使用
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                WaiWine では、サービス向上のために Cookie および類似技術を使用しています：
+                            </p>
+                            <div class="space-y-6">
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-green-900 mb-2 flex items-center">
+                                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                                <i class="ri-check-line text-green-600"></i>
+                                            </div>
+                                            必須 Cookie
+                                        </h4>
+                                        <p class="text-green-800 text-sm mb-2">サービス提供に不可欠</p>
+                                        <ul class="text-green-700 text-xs space-y-1">
+                                            <li>• ログイン状態の維持</li>
+                                            <li>• セキュリティ機能</li>
+                                            <li>• 基本設定の保存</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-blue-900 mb-2 flex items-center">
+                                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                                <i class="ri-settings-line text-blue-600"></i>
+                                            </div>
+                                            機能 Cookie
+                                        </h4>
+                                        <p class="text-blue-800 text-sm mb-2">ユーザー体験の向上</p>
+                                        <ul class="text-blue-700 text-xs space-y-1">
+                                            <li>• 言語設定の記憶</li>
+                                            <li>• 個人設定の保存</li>
+                                            <li>• 使用履歴の管理</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                                        <h4 class="font-semibold text-orange-900 mb-2 flex items-center">
+                                            <div class="w-5 h-5 flex items-center justify-center mr-2">
+                                                <i class="ri-bar-chart-line text-orange-600"></i>
+                                            </div>
+                                            分析 Cookie
+                                        </h4>
+                                        <p class="text-orange-800 text-sm mb-2">サービス改善のため</p>
+                                        <ul class="text-orange-700 text-xs space-y-1">
+                                            <li>• 利用統計の収集</li>
+                                            <li>• パフォーマンス分析</li>
+                                            <li>• エラー報告</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-3">Cookie の管理</h4>
+                                    <p class="text-gray-600 text-sm mb-3">
+                                        ブラウザの設定で Cookie を無効にすることができますが、一部機能が制限される場合があります。アプリ内の設定画面からも Cookie の使用を管理できます。
+                                    </p>
+                                    <div class="flex items-center space-x-4 text-sm">
+                                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">
+                                            Cookie 設定を管理
+                                        </button>
+                                        <a href="#" class="text-primary hover:underline">詳細な Cookie ポリシー</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="legal-basis" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-scales-3-line text-primary"></i>
+                                </div>
+                            </div>
+                            9. 法的根拠
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                個人情報の処理は、以下の法的根拠に基づいて行われます：
+                            </p>
+                            <div class="space-y-4">
+                                <div class="border border-gray-200 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-3 flex items-center">
+                                        <div class="w-6 h-6 bg-primary/10 rounded-lg flex items-center justify-center mr-2">
+                                            <div class="w-4 h-4 flex items-center justify-center">
+                                                <i class="ri-file-text-line text-primary"></i>
+                                            </div>
+                                        </div>
+                                        適用法令
+                                    </h4>
+                                    <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 mb-2">日本国内</h5>
+                                            <ul class="text-gray-600 space-y-1">
+                                                <li>• 個人情報保護法</li>
+                                                <li>• 電気通信事業法</li>
+                                                <li>• 消費者契約法</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-900 mb-2">国際的な規制</h5>
+                                            <ul class="text-gray-600 space-y-1">
+                                                <li>• GDPR（EU 一般データ保護規則）</li>
+                                                <li>• CCPA（カリフォルニア州消費者プライバシー法）</li>
+                                                <li>• その他各国のプライバシー法</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-primary/5 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-3">処理の法的根拠</h4>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                                <span class="text-primary text-xs font-bold">1</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">契約の履行：</span>
+                                                <span class="text-gray-600">サービス提供契約に基づく必要な処理</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                                <span class="text-primary text-xs font-bold">2</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">同意：</span>
+                                                <span class="text-gray-600">お客様からの明示的な同意に基づく処理</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                                <span class="text-primary text-xs font-bold">3</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">正当な利益：</span>
+                                                <span class="text-gray-600">サービス改善、セキュリティ向上のための処理</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                                <span class="text-primary text-xs font-bold">4</span>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">法的義務：</span>
+                                                <span class="text-gray-600">法令遵守のために必要な処理</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="contact" class="bg-white rounded-xl border border-gray-200 p-8">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                            <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-customer-service-2-line text-primary"></i>
+                                </div>
+                            </div>
+                            10. お問い合わせ
+                        </h2>
+                        <div class="prose prose-gray max-w-none">
+                            <p class="text-gray-600 mb-6">
+                                プライバシーポリシーに関するご質問やご懸念がございましたら、以下の方法でお問い合わせください：
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-stone-50 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-4">プライバシー専用窓口</h4>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <i class="ri-mail-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">メール：</span>
+                                                <span class="text-gray-600">privacy@waiwine.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <i class="ri-phone-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">電話：</span>
+                                                <span class="text-gray-600">03-1234-5678</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                                <i class="ri-map-pin-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">住所：</span>
+                                                <span class="text-gray-600">〒100-0001<br>東京都千代田区千代田1-1-1<br>WaiWine ビル 5F</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-stone-50 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-4">対応時間・方法</h4>
+                                    <div class="space-y-3 text-sm">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                                <i class="ri-time-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">営業時間：</span>
+                                                <span class="text-gray-600">平日 9:00 - 18:00</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                                <i class="ri-message-3-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">返信時間：</span>
+                                                <span class="text-gray-600">原則 3 営業日以内</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                                <i class="ri-global-line text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <span class="font-medium text-gray-900">対応言語：</span>
+                                                <span class="text-gray-600">日本語、English</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-primary text-white rounded-lg p-6 mt-6">
+                                <h4 class="font-semibold mb-3">データ保護責任者（DPO）</h4>
+                                <p class="text-white/90 text-sm mb-3">
+                                    GDPR に基づき、データ保護責任者を設置しています。個人情報の取り扱いに関する専門的なご相談は、DPO まで直接お問い合わせください。
+                                </p>
+                                <div class="flex items-center space-x-2 text-sm">
+                                    <div class="w-4 h-4 flex items-center justify-center">
+                                        <i class="ri-mail-line"></i>
+                                    </div>
+                                    <span>dpo@waiwine.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 bg-stone-50">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="bg-white rounded-xl p-8 shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">ポリシーの更新について</h3>
+                    <p class="text-gray-600 mb-6">
+                        本プライバシーポリシーは、法令の改正やサービスの変更に伴い、予告なく変更される場合があります。重要な変更については、アプリ内通知やメールでお知らせいたします。
+                    </p>
+                    <div class="flex justify-center space-x-4">
+                        <button class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">
+                            更新通知を受け取る
+                        </button>
+                        <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/04458ec3-34a8-4a40-b12d-a9289ee04df3" data-readdy="true" class="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">
+                            ホームに戻る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-wine-glass-line text-white"></i>
+                            </div>
+                        </div>
+                        <span class="font-['Pacifico'] text-xl text-white">WaiWine</span>
+                    </div>
+                    <p class="text-gray-400">ワインで繋がる新しい出会いのプラットフォーム</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ワインスキャン</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ボイスチャット</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">リアルタイム翻訳</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">サポート</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ヘルプセンター</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">お問い合わせ</a></li>
+                        <li><span class="text-white font-medium">プライバシーポリシー</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">フォローする</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-line text-gray-400"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-line text-gray-400"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-line text-gray-400"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 WaiWine. All rights reserved. | <a href="https://wai.wine/" class="hover:text-white transition-colors">wai.wine</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="smooth-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = 80;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="language-toggle">
+        document.addEventListener('DOMContentLoaded', function() {
+            const langJa = document.getElementById('lang-ja');
+            const langEn = document.getElementById('lang-en');
+            
+            function switchLanguage(lang) {
+                if (lang === 'ja') {
+                    langJa.classList.add('bg-primary', 'text-white');
+                    langJa.classList.remove('text-gray-600');
+                    langEn.classList.remove('bg-primary', 'text-white');
+                    langEn.classList.add('text-gray-600');
+                    document.documentElement.lang = 'ja';
+                    document.title = 'プライバシーポリシー - WaiWine';
+                } else {
+                    langEn.classList.add('bg-primary', 'text-white');
+                    langEn.classList.remove('text-gray-600');
+                    langJa.classList.remove('bg-primary', 'text-white');
+                    langJa.classList.add('text-gray-600');
+                    document.documentElement.lang = 'en';
+                    document.title = 'Privacy Policy - WaiWine';
+                }
+            }
+
+            langJa.addEventListener('click', () => switchLanguage('ja'));
+            langEn.addEventListener('click', () => switchLanguage('en'));
+        });
+    </script>
+</body>
+</html>

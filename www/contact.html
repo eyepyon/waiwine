@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - WaiWine</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#7B2D26',secondary:'#D4A574'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+<body class="bg-stone-50 min-h-screen">
+    <header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                    <div class="w-8 h-8 flex items-center justify-center">
+                        <i class="ri-wine-glass-line text-white text-xl"></i>
+                    </div>
+                </div>
+                <span class="font-['Pacifico'] text-2xl text-primary">WaiWine</span>
+            </div>
+            
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-8">
+                    <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/39fcfe11-1c19-4df7-9dba-d6206e7155e5" data-readdy="true" class="text-gray-700 hover:text-primary transition-colors">ホーム</a>
+                    <a href="#faq" class="text-gray-700 hover:text-primary transition-colors">よくある質問</a>
+                    <a href="#guide" class="text-gray-700 hover:text-primary transition-colors">使い方ガイド</a>
+                    <a href="#contact" class="text-primary font-medium">お問い合わせ</a>
+                </nav>
+                
+                <div class="flex items-center bg-gray-100 rounded-full p-1">
+                    <button id="lang-ja" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap bg-primary text-white">
+                        日本語
+                    </button>
+                    <button id="lang-en" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+                        English
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white border-b px-6 py-3">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/39fcfe11-1c19-4df7-9dba-d6206e7155e5" data-readdy="true" class="hover:text-primary transition-colors">ホーム</a>
+                <div class="w-4 h-4 flex items-center justify-center mx-2">
+                    <i class="ri-arrow-right-s-line text-gray-400"></i>
+                </div>
+                <span class="text-primary font-medium">お問い合わせ</span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="py-16 px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl font-bold text-gray-900 mb-6">お問い合わせ</h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    WaiWine のサポートチームがお手伝いいたします。ご質問やご不明な点がございましたら、お気軽にお問い合わせください。
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                            <h2 class="text-2xl font-bold text-gray-900 mb-6">お問い合わせフォーム</h2>
+                            
+                            <div class="mb-8">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">お問い合わせカテゴリ</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <label class="category-option flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                        <input type="radio" name="category" value="technical" class="sr-only">
+                                        <div class="category-icon w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                            <div class="w-6 h-6 flex items-center justify-center">
+                                                <i class="ri-tools-line text-blue-600"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">技術的問題</h4>
+                                            <p class="text-sm text-gray-600">アプリの不具合や機能に関する問題</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="category-option flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                        <input type="radio" name="category" value="account" class="sr-only">
+                                        <div class="category-icon w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                            <div class="w-6 h-6 flex items-center justify-center">
+                                                <i class="ri-user-settings-line text-green-600"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">アカウント関連</h4>
+                                            <p class="text-sm text-gray-600">ログインやプロフィール設定について</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="category-option flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                        <input type="radio" name="category" value="privacy" class="sr-only">
+                                        <div class="category-icon w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                            <div class="w-6 h-6 flex items-center justify-center">
+                                                <i class="ri-shield-user-line text-purple-600"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">プライバシー</h4>
+                                            <p class="text-sm text-gray-600">個人情報やデータ保護に関する質問</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <label class="category-option flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors">
+                                        <input type="radio" name="category" value="other" class="sr-only">
+                                        <div class="category-icon w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                            <div class="w-6 h-6 flex items-center justify-center">
+                                                <i class="ri-question-line text-orange-600"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-medium text-gray-900">その他</h4>
+                                            <p class="text-sm text-gray-600">上記以外のご質問やご要望</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <form class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-900 mb-2">
+                                            お名前 <span class="text-red-500">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            name="name" 
+                                            required 
+                                            placeholder="山田 太郎"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-900 mb-2">
+                                            メールアドレス <span class="text-red-500">*</span>
+                                        </label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            name="email" 
+                                            required 
+                                            placeholder="example@email.com"
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                        >
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-900 mb-2">
+                                        件名 <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="subject" 
+                                        name="subject" 
+                                        required 
+                                        placeholder="お問い合わせの件名をご入力ください"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-900 mb-2">
+                                        お問い合わせ内容 <span class="text-red-500">*</span>
+                                    </label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="6" 
+                                        required 
+                                        placeholder="詳細なお問い合わせ内容をご記入ください。問題が発生している場合は、具体的な状況や手順もお教えください。"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm resize-none"
+                                    ></textarea>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-xs text-gray-500">詳細な情報をいただくことで、より迅速にサポートできます</span>
+                                        <span id="char-count" class="text-xs text-gray-400">0 / 1000</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex items-center h-5">
+                                        <input 
+                                            id="privacy-agree" 
+                                            type="checkbox" 
+                                            required
+                                            class="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2"
+                                        >
+                                    </div>
+                                    <label for="privacy-agree" class="text-sm text-gray-600">
+                                        <a href="#" class="text-primary hover:underline">プライバシーポリシー</a>に同意し、お問い合わせ対応のために個人情報が利用されることを承諾します。<span class="text-red-500">*</span>
+                                    </label>
+                                </div>
+                                
+                                <button 
+                                    type="submit" 
+                                    class="w-full bg-primary text-white py-4 px-6 rounded-lg hover:bg-primary/90 transition-colors font-medium !rounded-button whitespace-nowrap"
+                                >
+                                    お問い合わせを送信
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <div class="w-6 h-6 flex items-center justify-center mr-2">
+                                    <i class="ri-customer-service-2-line text-primary"></i>
+                                </div>
+                                サポート窓口
+                            </h3>
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                        <div class="w-5 h-5 flex items-center justify-center">
+                                            <i class="ri-mail-line text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">メール</h4>
+                                        <p class="text-sm text-gray-600">support@waiwine.com</p>
+                                        <p class="text-xs text-gray-500">24時間受付・3営業日以内に返信</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                        <div class="w-5 h-5 flex items-center justify-center">
+                                            <i class="ri-phone-line text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">電話</h4>
+                                        <p class="text-sm text-gray-600">03-1234-5678</p>
+                                        <p class="text-xs text-gray-500">平日 10:00 - 18:00</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mt-1">
+                                        <div class="w-5 h-5 flex items-center justify-center">
+                                            <i class="ri-time-line text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">営業時間</h4>
+                                        <p class="text-sm text-gray-600">平日 10:00 - 18:00</p>
+                                        <p class="text-xs text-gray-500">土日祝日は休業</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-6">
+                                <h4 class="font-medium text-red-900 mb-2 flex items-center">
+                                    <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                        <i class="ri-alert-line text-red-600"></i>
+                                    </div>
+                                    緊急時の対応
+                                </h4>
+                                <p class="text-sm text-red-800">
+                                    セキュリティに関わる重大な問題や緊急事態の場合は、メールに「緊急」と明記してお送りください。優先的に対応いたします。
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                            <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                                <div class="w-6 h-6 flex items-center justify-center mr-2">
+                                    <i class="ri-links-line text-primary"></i>
+                                </div>
+                                クイックリンク
+                            </h3>
+                            <div class="space-y-3">
+                                <a href="#faq" class="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <h4 class="font-medium text-gray-900 text-sm">よくある質問</h4>
+                                    <p class="text-xs text-gray-600">一般的な質問と回答</p>
+                                </a>
+                                <a href="#guide" class="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <h4 class="font-medium text-gray-900 text-sm">使い方ガイド</h4>
+                                    <p class="text-xs text-gray-600">機能の詳しい使い方</p>
+                                </a>
+                                <a href="#" class="block p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                                    <h4 class="font-medium text-gray-900 text-sm">プライバシーポリシー</h4>
+                                    <p class="text-xs text-gray-600">個人情報の取り扱いについて</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-16 px-6 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">よくある質問</h2>
+                    <p class="text-gray-600">お問い合わせの前に、こちらもご確認ください</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">アカウントの作成方法を教えてください</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                アプリをダウンロード後、「新規登録」ボタンをタップし、メールアドレスとパスワードを入力してください。その後、プロフィール情報とワインの好みを設定することで、より精度の高いマッチングが可能になります。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">音声チャットの翻訳機能はどのように使いますか？</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                チャット画面で音声ボタンを長押しして話すと、自動的に相手の言語に翻訳されて配信されます。現在、日本語と英語の双方向翻訳に対応しており、リアルタイムでスムーズなコミュニケーションが可能です。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">ワインスキャン機能で認識されないワインがあります</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                ラベルが鮮明に写るよう、十分な明るさで正面から撮影してください。古いワインや限定品など、データベースに登録されていないワインの場合は認識されない場合があります。そのような場合は手動で情報を入力することも可能です。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">個人情報はどのように保護されていますか？</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                すべての個人情報は暗号化されて保存され、音声データはリアルタイム処理のみで使用されサーバーには保存されません。詳細については<a href="#" class="text-primary hover:underline">プライバシーポリシー</a>をご確認ください。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">マッチング相手が見つからない場合はどうすればよいですか？</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                プロフィール情報やワインの好みをより詳しく設定することで、マッチング精度が向上します。また、検索範囲を広げたり、異なる時間帯にアクセスすることで、より多くの相手と出会える可能性があります。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item border border-gray-200 rounded-lg">
+                        <button class="faq-question w-full text-left p-6 hover:bg-gray-50 transition-colors flex justify-between items-center">
+                            <span class="font-medium text-gray-900">アプリが正常に動作しない場合の対処法は？</span>
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-gray-400 faq-icon"></i>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden px-6 pb-6">
+                            <p class="text-gray-600">
+                                まずアプリを完全に終了し、再起動をお試しください。それでも解決しない場合は、アプリの最新版への更新、デバイスの再起動をお試しください。問題が続く場合は、お使いのデバイス情報と具体的な症状をお問い合わせフォームからご連絡ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <div class="w-6 h-6 flex items-center justify-center">
+                                <i class="ri-wine-glass-line text-white"></i>
+                            </div>
+                        </div>
+                        <span class="font-['Pacifico'] text-xl text-white">WaiWine</span>
+                    </div>
+                    <p class="text-gray-400">ワインで繋がる新しい出会いのプラットフォーム</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">サービス</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ワインスキャン</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ボイスチャット</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">リアルタイム翻訳</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">サポート</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ヘルプセンター</a></li>
+                        <li><span class="text-white font-medium">お問い合わせ</span></li>
+                        <li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">フォローする</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-twitter-x-line text-gray-400"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-instagram-line text-gray-400"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-facebook-line text-gray-400"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 WaiWine. All rights reserved. | <a href="https://wai.wine/" class="hover:text-white transition-colors">wai.wine</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="category-selection">
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryOptions = document.querySelectorAll('.category-option');
+            
+            categoryOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    categoryOptions.forEach(opt => {
+                        opt.classList.remove('border-primary', 'bg-primary/5');
+                        opt.classList.add('border-gray-200');
+                    });
+                    
+                    this.classList.remove('border-gray-200');
+                    this.classList.add('border-primary', 'bg-primary/5');
+                    
+                    const radio = this.querySelector('input[type="radio"]');
+                    radio.checked = true;
+                });
+            });
+        });
+    </script>
+
+    <script id="form-validation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const messageTextarea = document.getElementById('message');
+            const charCount = document.getElementById('char-count');
+            const maxLength = 1000;
+            
+            messageTextarea.addEventListener('input', function() {
+                const currentLength = this.value.length;
+                charCount.textContent = `${currentLength} / ${maxLength}`;
+                
+                if (currentLength > maxLength * 0.9) {
+                    charCount.classList.add('text-red-500');
+                } else {
+                    charCount.classList.remove('text-red-500');
+                }
+            });
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const categorySelected = document.querySelector('input[name="category"]:checked');
+                if (!categorySelected) {
+                    alert('お問い合わせカテゴリを選択してください。');
+                    return;
+                }
+                
+                const formData = new FormData(this);
+                console.log('Form submitted with data:', Object.fromEntries(formData));
+                alert('お問い合わせを受け付けました。3営業日以内にご返信いたします。');
+            });
+        });
+    </script>
+
+    <script id="faq-accordion">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.closest('.faq-item');
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    const isOpen = !answer.classList.contains('hidden');
+                    
+                    document.querySelectorAll('.faq-answer').forEach(ans => {
+                        ans.classList.add('hidden');
+                    });
+                    document.querySelectorAll('.faq-icon').forEach(ic => {
+                        ic.classList.remove('ri-arrow-up-s-line');
+                        ic.classList.add('ri-arrow-down-s-line');
+                    });
+                    
+                    if (!isOpen) {
+                        answer.classList.remove('hidden');
+                        icon.classList.remove('ri-arrow-down-s-line');
+                        icon.classList.add('ri-arrow-up-s-line');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="language-toggle">
+        document.addEventListener('DOMContentLoaded', function() {
+            const langJa = document.getElementById('lang-ja');
+            const langEn = document.getElementById('lang-en');
+            
+            function switchLanguage(lang) {
+                if (lang === 'ja') {
+                    langJa.classList.add('bg-primary', 'text-white');
+                    langJa.classList.remove('text-gray-600');
+                    langEn.classList.remove('bg-primary', 'text-white');
+                    langEn.classList.add('text-gray-600');
+                    document.documentElement.lang = 'ja';
+                    document.title = 'お問い合わせ - WaiWine';
+                } else {
+                    langEn.classList.add('bg-primary', 'text-white');
+                    langEn.classList.remove('text-gray-600');
+                    langJa.classList.remove('bg-primary', 'text-white');
+                    langJa.classList.add('text-gray-600');
+                    document.documentElement.lang = 'en';
+                    document.title = 'Contact Us - WaiWine';
+                }
+            }
+
+            langJa.addEventListener('click', () => switchLanguage('ja'));
+            langEn.addEventListener('click', () => switchLanguage('en'));
+        });
+    </script>
+</body>
+</html>

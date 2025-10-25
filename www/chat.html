@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WaiWine - ボイスチャット機能</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#7B2D26',secondary:'#D4A574'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+</style>
+</head>
+<body class="bg-stone-50 min-h-screen">
+<header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-wine-glass-line text-white text-xl"></i>
+</div>
+</div>
+<span class="font-['Pacifico'] text-2xl text-primary">WaiWine</span>
+</div>
+<div class="flex items-center space-x-6">
+<nav class="hidden md:flex space-x-8">
+<a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/33014a86-b221-4f75-b1fc-ce467cadd41c" data-readdy="true" class="text-gray-700 hover:text-primary transition-colors">ホーム</a>
+<a href="#voice-chat" class="text-primary font-semibold">ボイスチャット</a>
+<a href="#settings" class="text-gray-700 hover:text-primary transition-colors">設定</a>
+<a href="#history" class="text-gray-700 hover:text-primary transition-colors">履歴</a>
+</nav>
+<div class="flex items-center bg-gray-100 rounded-full p-1">
+<button id="lang-ja" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap bg-primary text-white">
+日本語
+</button>
+<button id="lang-en" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+English
+</button>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<section class="relative py-20 px-6" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20voice%20communication%20technology%20with%20sound%20waves%20visualization%2C%20elegant%20microphone%20and%20audio%20equipment%2C%20real-time%20translation%20interface%2C%20global%20communication%20concept%2C%20sophisticated%20audio%20technology%20background%2C%20clean%20minimalist%20design%20with%20warm%20lighting&width=1920&height=800&seq=voicechat1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-stone-50/95 via-stone-50/85 to-transparent"></div>
+<div class="relative max-w-7xl mx-auto">
+<div class="max-w-3xl">
+<h1 class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+ボイスチャット機能
+</h1>
+<p class="text-xl text-gray-700 mb-8 leading-relaxed">
+リアルタイム翻訳機能付きの高品質音声チャットで、世界中のワイン愛好家と言語の壁を越えて会話を楽しめます。AI による自動翻訳で、自然な会話体験を提供します。
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button id="start-chat" class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">
+チャットを開始する
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+使い方を見る
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">主要機能</h2>
+<p class="text-xl text-gray-600">最新技術で実現する革新的な音声チャット体験</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center p-6 bg-stone-50 rounded-xl">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-translate-2 text-primary text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">リアルタイム翻訳</h3>
+<p class="text-gray-600">字幕・吹き替え対応で自然な多言語会話</p>
+</div>
+<div class="text-center p-6 bg-stone-50 rounded-xl">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-hd-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">高品質音声通話</h3>
+<p class="text-gray-600">クリアで遅延の少ない音声通信</p>
+</div>
+<div class="text-center p-6 bg-stone-50 rounded-xl">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-noise-reduction-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">ノイズキャンセリング</h3>
+<p class="text-gray-600">AI による背景ノイズの自動除去</p>
+</div>
+<div class="text-center p-6 bg-stone-50 rounded-xl">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-save-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">会話履歴保存</h3>
+<p class="text-gray-600">重要な会話を自動で記録・保存</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">使い方ガイド</h2>
+<p class="text-xl text-gray-600">4 つの簡単なステップで音声チャットを開始</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-settings-3-line text-primary text-2xl"></i>
+</div>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center font-semibold">1</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">デバイス設定</h3>
+<p class="text-gray-600">マイクとスピーカーの動作確認と音量調整</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-global-line text-primary text-2xl"></i>
+</div>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center font-semibold">2</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">言語選択</h3>
+<p class="text-gray-600">翻訳言語と音声設定の選択</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-phone-line text-primary text-2xl"></i>
+</div>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center font-semibold">3</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">チャット開始</h3>
+<p class="text-gray-600">マッチングされた相手と音声チャット開始</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-chat-voice-line text-primary text-2xl"></i>
+</div>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-sm w-6 h-6 rounded-full flex items-center justify-center font-semibold">4</span>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">翻訳会話</h3>
+<p class="text-gray-600">リアルタイム翻訳で自然な会話を楽しむ</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">チャット画面プレビュー</h2>
+<p class="text-xl text-gray-600">実際のチャットインターフェースをご覧ください</p>
+</div>
+<div class="max-w-4xl mx-auto bg-gray-900 rounded-2xl p-8 shadow-2xl">
+<div class="bg-white rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">MR</span>
+</div>
+<div>
+<h3 class="font-semibold text-gray-900">Marco Rossi</h3>
+<p class="text-sm text-gray-500">イタリア・トスカーナ州</p>
+</div>
+</div>
+<div class="flex items-center space-x-2 text-sm text-gray-500">
+<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+<span>通話中 • 05:32</span>
+</div>
+</div>
+<div class="space-y-4 mb-6">
+<div class="bg-gray-100 rounded-lg p-4">
+<div class="flex items-center space-x-2 mb-2">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-volume-up-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-600">Marco の音声</span>
+</div>
+<div class="bg-white rounded p-3 border-l-4 border-primary">
+<p class="text-gray-900 mb-1">"Questo Chianti Classico ha un sapore incredibile!"</p>
+<p class="text-sm text-gray-600">「このキャンティ・クラシコは信じられないほど美味しいです！」</p>
+</div>
+</div>
+<div class="bg-blue-50 rounded-lg p-4">
+<div class="flex items-center space-x-2 mb-2">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-mic-line text-blue-600"></i>
+</div>
+<span class="text-sm text-gray-600">あなたの音声</span>
+</div>
+<div class="bg-white rounded p-3 border-l-4 border-blue-600">
+<p class="text-gray-900 mb-1">「本当にそうですね！このワインの複雑な味わいが素晴らしいです」</p>
+<p class="text-sm text-gray-600">"Davvero! Il sapore complesso di questo vino è meraviglioso"</p>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center space-x-4">
+<button class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-mic-off-line text-gray-600"></i>
+</div>
+</button>
+<button class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-phone-line text-white text-xl"></i>
+</div>
+</button>
+<button class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center hover:bg-gray-300 transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-volume-up-line text-gray-600"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="settings" class="py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">音声設定</h2>
+<p class="text-xl text-gray-600">最適な通話品質のための詳細設定</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12">
+<div class="bg-white rounded-xl p-8 shadow-lg">
+<h3 class="text-2xl font-semibold text-gray-900 mb-6">デバイス設定</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">マイクボリューム</label>
+<div class="flex items-center space-x-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-mic-line text-gray-500"></i>
+</div>
+<div class="flex-1 relative">
+<input type="range" id="mic-volume" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" min="0" max="100" value="75">
+<div class="absolute top-0 left-0 h-2 bg-primary rounded-lg" style="width: 75%"></div>
+</div>
+<span id="mic-value" class="text-sm text-gray-600 w-8">75</span>
+</div>
+<button class="mt-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">
+マイクテスト
+</button>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">スピーカーボリューム</label>
+<div class="flex items-center space-x-4">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-volume-up-line text-gray-500"></i>
+</div>
+<div class="flex-1 relative">
+<input type="range" id="speaker-volume" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer" min="0" max="100" value="60">
+<div class="absolute top-0 left-0 h-2 bg-primary rounded-lg" style="width: 60%"></div>
+</div>
+<span id="speaker-value" class="text-sm text-gray-600 w-8">60</span>
+</div>
+<button class="mt-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">
+スピーカーテスト
+</button>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">音質設定</label>
+<div class="flex space-x-1 bg-gray-100 rounded-lg p-1">
+<button id="quality-high" class="px-4 py-2 rounded-lg text-sm font-medium transition-all !rounded-button whitespace-nowrap bg-primary text-white">
+高品質
+</button>
+<button id="quality-standard" class="px-4 py-2 rounded-lg text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+標準
+</button>
+<button id="quality-low" class="px-4 py-2 rounded-lg text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+省電力
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg">
+<h3 class="text-2xl font-semibold text-gray-900 mb-6">翻訳設定</h3>
+<div class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">翻訳モード</label>
+<div class="space-y-3">
+<label class="flex items-center">
+<input type="radio" name="translation-mode" value="subtitle" class="sr-only">
+<div class="w-4 h-4 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full opacity-0 transition-opacity"></div>
+</div>
+<span class="text-gray-700">字幕のみ</span>
+</label>
+<label class="flex items-center">
+<input type="radio" name="translation-mode" value="voice" class="sr-only">
+<div class="w-4 h-4 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full opacity-100 transition-opacity"></div>
+</div>
+<span class="text-gray-700">音声翻訳</span>
+</label>
+<label class="flex items-center">
+<input type="radio" name="translation-mode" value="both" class="sr-only">
+<div class="w-4 h-4 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full opacity-0 transition-opacity"></div>
+</div>
+<span class="text-gray-700">字幕 + 音声</span>
+</label>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">ノイズキャンセリング</label>
+<div class="flex items-center">
+<button id="noise-toggle" class="relative w-12 h-6 bg-primary rounded-full transition-colors">
+<div class="absolute top-1 right-1 w-4 h-4 bg-white rounded-full transition-transform"></div>
+</button>
+<span class="ml-3 text-gray-700">有効</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-3">自動録音</label>
+<div class="flex items-center">
+<button id="record-toggle" class="relative w-12 h-6 bg-gray-300 rounded-full transition-colors">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-transform"></div>
+</button>
+<span class="ml-3 text-gray-700">無効</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">対応言語</h2>
+<p class="text-xl text-gray-600">世界中の言語でリアルタイム翻訳をサポート</p>
+</div>
+<div class="grid md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+<div class="bg-primary/5 border-2 border-primary rounded-lg p-4 text-center cursor-pointer hover:bg-primary/10 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-primary text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-900">日本語</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">English</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Français</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Italiano</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Español</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Deutsch</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">中文</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">한국어</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Português</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">Русский</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-flag-line text-gray-600 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-700">العربية</span>
+</div>
+<div class="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 text-center cursor-pointer hover:bg-gray-100 transition-colors">
+<div class="w-8 h-8 flex items-center justify-center mx-auto mb-2">
+<i class="ri-add-line text-gray-400 text-xl"></i>
+</div>
+<span class="text-sm font-medium text-gray-500">その他</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="history" class="py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">チャット履歴</h2>
+<p class="text-xl text-gray-600">過去の会話を振り返り、お気に入りの会話を保存</p>
+</div>
+<div class="bg-white rounded-xl shadow-lg overflow-hidden">
+<div class="p-6 border-b border-gray-200">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-semibold text-gray-900">最近の会話</h3>
+<div class="flex items-center space-x-2">
+<button class="px-4 py-2 text-sm text-gray-600 hover:text-primary transition-colors">すべて</button>
+<button class="px-4 py-2 text-sm bg-primary text-white rounded-lg !rounded-button whitespace-nowrap">お気に入り</button>
+</div>
+</div>
+</div>
+<div class="divide-y divide-gray-200">
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">MR</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Marco Rossi</h4>
+<p class="text-sm text-gray-500">イタリア・トスカーナ州 • 2025年1月20日</p>
+<p class="text-sm text-gray-600 mt-1">Chianti Classico 2018 について</p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-500">15分32秒</span>
+<button class="w-8 h-8 flex items-center justify-center text-yellow-500 hover:bg-yellow-50 rounded-full">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">SL</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">Sophie Laurent</h4>
+<p class="text-sm text-gray-500">フランス・ボルドー • 2025年1月19日</p>
+<p class="text-sm text-gray-600 mt-1">Château Margaux 2015 について</p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-500">28分17秒</span>
+<button class="w-8 h-8 flex items-center justify-center text-gray-400 hover:bg-gray-100 rounded-full">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-line"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div class="p-6 hover:bg-gray-50 transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+<span class="text-white font-semibold">JA</span>
+</div>
+<div>
+<h4 class="font-semibold text-gray-900">James Anderson</h4>
+<p class="text-sm text-gray-500">アメリカ・カリフォルニア州 • 2025年1月18日</p>
+<p class="text-sm text-gray-600 mt-1">Opus One 2019 について</p>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-500">42分05秒</span>
+<button class="w-8 h-8 flex items-center justify-center text-yellow-500 hover:bg-yellow-50 rounded-full">
+<div class="w-4 h-4 flex items-center justify-center">
+<i class="ri-star-fill"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 text-center border-t border-gray-200">
+<button class="text-primary hover:text-primary/80 transition-colors">すべての履歴を表示</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-20 px-6 bg-white">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">よくある質問</h2>
+<p class="text-xl text-gray-600">ボイスチャット機能に関するよくあるご質問</p>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors" onclick="toggleFAQ(1)">
+<span class="font-semibold text-gray-900">翻訳の精度はどの程度ですか？</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i id="faq-icon-1" class="ri-add-line text-gray-500 transition-transform"></i>
+</div>
+</button>
+<div id="faq-content-1" class="hidden px-6 pb-6">
+<p class="text-gray-600">最新の AI 翻訳技術により、日常会話では 95% 以上の精度を実現しています。ワイン専門用語についても専用の辞書を搭載しており、高精度な翻訳を提供します。</p>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors" onclick="toggleFAQ(2)">
+<span class="font-semibold text-gray-900">どの言語に対応していますか？</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i id="faq-icon-2" class="ri-add-line text-gray-500 transition-transform"></i>
+</div>
+</button>
+<div id="faq-content-2" class="hidden px-6 pb-6">
+<p class="text-gray-600">現在、日本語、英語、フランス語、イタリア語、スペイン語、ドイツ語、中国語、韓国語、ポルトガル語、ロシア語、アラビア語など 50 以上の言語に対応しています。</p>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors" onclick="toggleFAQ(3)">
+<span class="font-semibold text-gray-900">音声の遅延はありますか？</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i id="faq-icon-3" class="ri-add-line text-gray-500 transition-transform"></i>
+</div>
+</button>
+<div id="faq-content-3" class="hidden px-6 pb-6">
+<p class="text-gray-600">高速サーバーと最適化されたアルゴリズムにより、翻訳処理を含めても 0.5 秒以下の低遅延を実現しています。自然な会話のリズムを保てます。</p>
+</div>
+</div>
+<div class="bg-gray-50 rounded-lg">
+<button class="w-full p-6 text-left flex items-center justify-between hover:bg-gray-100 transition-colors" onclick="toggleFAQ(4)">
+<span class="font-semibold text-gray-900">会話内容のプライバシーは保護されますか？</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i id="faq-icon-4" class="ri-add-line text-gray-500 transition-transform"></i>
+</div>
+</button>
+<div id="faq-content-4" class="hidden px-6 pb-6">
+<p class="text-gray-600">すべての音声データは暗号化され、翻訳処理後は自動的に削除されます。録音機能を有効にした場合のみ、暗号化された状態でデバイスに保存されます。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="bg-gray-900 text-white py-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<div class="flex items-center space-x-3 mb-4">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-wine-glass-line text-white"></i>
+</div>
+</div>
+<span class="font-['Pacifico'] text-xl text-white">WaiWine</span>
+</div>
+<p class="text-gray-400">ワインで繋がる新しい出会いのプラットフォーム</p>
+</div>
+<div>
+<h4 class="font-semibold mb-4">サービス</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">ワインスキャン</a></li>
+<li><a href="#" class="hover:text-white transition-colors">ボイスチャット</a></li>
+<li><a href="#" class="hover:text-white transition-colors">リアルタイム翻訳</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold mb-4">サポート</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" class="hover:text-white transition-colors">ヘルプセンター</a></li>
+<li><a href="#" class="hover:text-white transition-colors">お問い合わせ</a></li>
+<li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-semibold mb-4">フォローする</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-twitter-x-line text-gray-400"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-instagram-line text-gray-400"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-facebook-line text-gray-400"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 WaiWine. All rights reserved. | <a href="https://wai.wine/" class="hover:text-white transition-colors">wai.wine</a></p>
+</div>
+</div>
+</footer>
+
+<script id="language-toggle">
+document.addEventListener('DOMContentLoaded', function() {
+const langJa = document.getElementById('lang-ja');
+const langEn = document.getElementById('lang-en');
+
+function switchLanguage(lang) {
+if (lang === 'ja') {
+langJa.classList.add('bg-primary', 'text-white');
+langJa.classList.remove('text-gray-600');
+langEn.classList.remove('bg-primary', 'text-white');
+langEn.classList.add('text-gray-600');
+document.documentElement.lang = 'ja';
+} else {
+langEn.classList.add('bg-primary', 'text-white');
+langEn.classList.remove('text-gray-600');
+langJa.classList.remove('bg-primary', 'text-white');
+langJa.classList.add('text-gray-600');
+document.documentElement.lang = 'en';
+}
+}
+
+langJa.addEventListener('click', () => switchLanguage('ja'));
+langEn.addEventListener('click', () => switchLanguage('en'));
+});
+</script>
+
+<script id="audio-controls">
+document.addEventListener('DOMContentLoaded', function() {
+const micSlider = document.getElementById('mic-volume');
+const speakerSlider = document.getElementById('speaker-volume');
+const micValue = document.getElementById('mic-value');
+const speakerValue = document.getElementById('speaker-value');
+
+function updateSlider(slider, valueElement) {
+const value = slider.value;
+const percent = (value / slider.max) * 100;
+valueElement.textContent = value;
+const track = slider.nextElementSibling;
+if (track) {
+track.style.width = percent + '%';
+}
+}
+
+micSlider.addEventListener('input', () => updateSlider(micSlider, micValue));
+speakerSlider.addEventListener('input', () => updateSlider(speakerSlider, speakerValue));
+
+const qualityButtons = document.querySelectorAll('[id^="quality-"]');
+qualityButtons.forEach(button => {
+button.addEventListener('click', () => {
+qualityButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('text-gray-600');
+});
+button.classList.add('bg-primary', 'text-white');
+button.classList.remove('text-gray-600');
+});
+});
+});
+</script>
+
+<script id="toggle-controls">
+document.addEventListener('DOMContentLoaded', function() {
+const noiseToggle = document.getElementById('noise-toggle');
+const recordToggle = document.getElementById('record-toggle');
+
+function toggleSwitch(toggle, isActive) {
+const slider = toggle.querySelector('div');
+if (isActive) {
+toggle.classList.add('bg-primary');
+toggle.classList.remove('bg-gray-300');
+slider.classList.add('translate-x-6');
+slider.classList.remove('translate-x-0');
+} else {
+toggle.classList.remove('bg-primary');
+toggle.classList.add('bg-gray-300');
+slider.classList.remove('translate-x-6');
+slider.classList.add('translate-x-0');
+}
+}
+
+let noiseActive = true;
+let recordActive = false;
+
+noiseToggle.addEventListener('click', () => {
+noiseActive = !noiseActive;
+toggleSwitch(noiseToggle, noiseActive);
+const label = noiseToggle.nextElementSibling;
+label.textContent = noiseActive ? '有効' : '無効';
+});
+
+recordToggle.addEventListener('click', () => {
+recordActive = !recordActive;
+toggleSwitch(recordToggle, recordActive);
+const label = recordToggle.nextElementSibling;
+label.textContent = recordActive ? '有効' : '無効';
+});
+});
+</script>
+
+<script id="radio-controls">
+document.addEventListener('DOMContentLoaded', function() {
+const radioInputs = document.querySelectorAll('input[type="radio"]');
+const radioButtons = document.querySelectorAll('input[type="radio"] + div');
+
+radioButtons.forEach((button, index) => {
+button.addEventListener('click', () => {
+const input = radioInputs[index];
+const name = input.name;
+
+document.querySelectorAll(`input[name="${name}"]`).forEach((radio, i) => {
+const radioButton = document.querySelectorAll(`input[name="${name}"] + div`)[i];
+const indicator = radioButton.querySelector('div');
+if (radio === input) {
+indicator.style.opacity = '1';
+} else {
+indicator.style.opacity = '0';
+}
+});
+});
+});
+
+document.querySelector('input[value="voice"]').nextElementSibling.querySelector('div').style.opacity = '1';
+});
+</script>
+
+<script id="language-selection">
+document.addEventListener('DOMContentLoaded', function() {
+const languageCards = document.querySelectorAll('[class*="border-2"]');
+
+languageCards.forEach(card => {
+card.addEventListener('click', () => {
+languageCards.forEach(c => {
+c.classList.remove('bg-primary/5', 'border-primary');
+c.classList.add('bg-gray-50', 'border-gray-200');
+const icon = c.querySelector('i');
+const text = c.querySelector('span');
+if (icon) icon.classList.remove('text-primary');
+if (icon) icon.classList.add('text-gray-600');
+if (text) text.classList.remove('text-gray-900');
+if (text) text.classList.add('text-gray-700');
+});
+
+card.classList.remove('bg-gray-50', 'border-gray-200');
+card.classList.add('bg-primary/5', 'border-primary');
+const icon = card.querySelector('i');
+const text = card.querySelector('span');
+if (icon) icon.classList.remove('text-gray-600');
+if (icon) icon.classList.add('text-primary');
+if (text) text.classList.remove('text-gray-700');
+if (text) text.classList.add('text-gray-900');
+});
+});
+});
+</script>
+
+<script id="faq-functionality">
+function toggleFAQ(index) {
+const content = document.getElementById(`faq-content-${index}`);
+const icon = document.getElementById(`faq-icon-${index}`);
+
+if (content.classList.contains('hidden')) {
+content.classList.remove('hidden');
+icon.classList.remove('ri-add-line');
+icon.classList.add('ri-subtract-line');
+icon.style.transform = 'rotate(0deg)';
+} else {
+content.classList.add('hidden');
+icon.classList.remove('ri-subtract-line');
+icon.classList.add('ri-add-line');
+icon.style.transform = 'rotate(0deg)';
+}
+}
+</script>
+
+<script id="chat-start">
+document.addEventListener('DOMContentLoaded', function() {
+const startChatButton = document.getElementById('start-chat');
+
+startChatButton.addEventListener('click', () => {
+alert('音声チャット機能を開始します。マイクとスピーカーの設定を確認してください。');
+});
+});
+</script>
+
+</body>
+</html>

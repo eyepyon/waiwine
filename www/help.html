@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヘルプセンター - WaiWine</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7c3aed',
+                        secondary: '#f59e0b'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- ヘッダー -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+                    <nav class="hidden md:flex space-x-8">
+                        <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/33014a86-b221-4f75-b1fc-ce467cadd41c" data-readdy="true" class="text-gray-600 hover:text-primary transition-colors">ホーム</a>
+                        <a href="#" class="text-primary font-medium">ヘルプセンター</a>
+                        <a href="#" class="text-gray-600 hover:text-primary transition-colors">コミュニティ</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors">
+                            <span class="text-sm">日本語</span>
+                            <div class="w-4 h-4 flex items-center justify-center">
+                                <i class="ri-arrow-down-s-line text-sm"></i>
+                            </div>
+                        </button>
+                    </div>
+                    <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/33014a86-b221-4f75-b1fc-ce467cadd41c" data-readdy="true" class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-purple-700 transition-colors whitespace-nowrap">
+                        アプリに戻る
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- パンくずナビゲーション -->
+    <div class="bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex items-center space-x-2 text-sm">
+                <a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/33014a86-b221-4f75-b1fc-ce467cadd41c" data-readdy="true" class="text-gray-500 hover:text-primary transition-colors">ホーム</a>
+                <div class="w-4 h-4 flex items-center justify-center">
+                    <i class="ri-arrow-right-s-line text-gray-400"></i>
+                </div>
+                <span class="text-gray-900 font-medium">ヘルプセンター</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- ヒーローセクション -->
+    <section class="relative bg-gradient-to-br from-purple-50 to-amber-50 py-20" style="background-image: url('https://readdy.ai/api/search-image?query=elegant%20wine%20cellar%20with%20modern%20technology%20elements%2C%20soft%20lighting%2C%20wine%20bottles%20and%20digital%20interfaces%20harmoniously%20blended%2C%20sophisticated%20atmosphere%20with%20purple%20and%20amber%20tones%2C%20clean%20minimalist%20background%20perfect%20for%20text%20overlay&width=1200&height=600&seq=hero-help&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold text-gray-900 mb-6">ヘルプセンター</h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                WaiWine の使い方でお困りですか？<br>
+                よくある質問や詳細なガイドをご確認いただけます
+            </p>
+            
+            <!-- 検索バー -->
+            <div class="max-w-2xl mx-auto">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <div class="w-5 h-5 flex items-center justify-center">
+                            <i class="ri-search-line text-gray-400"></i>
+                        </div>
+                    </div>
+                    <input type="text" class="w-full pl-12 pr-4 py-4 border border-gray-300 !rounded-button text-lg placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="質問やキーワードを入力してください">
+                    <button class="absolute inset-y-0 right-0 pr-4 flex items-center">
+                        <div class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-purple-700 transition-colors whitespace-nowrap">
+                            検索
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- クイックアクセス -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">よく使われるヘルプ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-lg mb-4">
+                        <i class="ri-camera-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">ワインスキャン</h3>
+                    <p class="text-gray-600 text-sm">ワインラベルの撮影方法と認識のコツ</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-amber-100 rounded-lg mb-4">
+                        <i class="ri-mic-line text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">音声チャット</h3>
+                    <p class="text-gray-600 text-sm">リアルタイム音声翻訳の使い方</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mb-4">
+                        <i class="ri-translate-line text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">翻訳設定</h3>
+                    <p class="text-gray-600 text-sm">言語設定と翻訳機能のカスタマイズ</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-lg mb-4">
+                        <i class="ri-tools-line text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">トラブル解決</h3>
+                    <p class="text-gray-600 text-sm">よくある問題と解決方法</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくある質問 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">よくある質問（FAQ）</h2>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200">
+                <div class="faq-item border-b border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="text-lg font-medium text-gray-900">ワインスキャンが認識されない場合はどうすればよいですか？</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 faq-arrow"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-gray-600 leading-relaxed">
+                            ワインラベルが認識されない場合は、以下の点をご確認ください：<br>
+                            • ラベル全体が画面内に収まっているか<br>
+                            • 十分な明るさがあるか<br>
+                            • ラベルにピントが合っているか<br>
+                            • ラベルが汚れていたり、破損していないか<br><br>
+                            それでも認識されない場合は、手動でワイン名を入力することも可能です。
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item border-b border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="text-lg font-medium text-gray-900">音声チャットで相手の声が聞こえません</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 faq-arrow"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-gray-600 leading-relaxed">
+                            音声が聞こえない場合は、以下をお試しください：<br>
+                            • デバイスの音量設定を確認<br>
+                            • アプリの音声権限が許可されているか確認<br>
+                            • イヤホンやヘッドフォンの接続を確認<br>
+                            • アプリを再起動してみる<br>
+                            • インターネット接続が安定しているか確認
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item border-b border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="text-lg font-medium text-gray-900">翻訳の精度を向上させるにはどうすればよいですか？</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 faq-arrow"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-gray-600 leading-relaxed">
+                            翻訳精度を向上させるためのコツ：<br>
+                            • はっきりとした発音で話す<br>
+                            • 背景雑音を最小限に抑える<br>
+                            • 専門用語は事前に登録しておく<br>
+                            • 短い文章に区切って話す<br>
+                            • マイクの位置を適切に調整する
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                        <span class="text-lg font-medium text-gray-900">アカウントのパスワードを忘れました</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-gray-400 faq-arrow"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content px-6 pb-4 hidden">
+                        <p class="text-gray-600 leading-relaxed">
+                            パスワードをリセットするには：<br>
+                            1. ログイン画面で「パスワードを忘れた方」をクリック<br>
+                            2. 登録済みのメールアドレスを入力<br>
+                            3. 送信されたメールのリンクをクリック<br>
+                            4. 新しいパスワードを設定<br><br>
+                            メールが届かない場合は、迷惑メールフォルダもご確認ください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 機能ガイド -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">機能別ガイド</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- ワインスキャンガイド -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-purple-100 to-purple-200" style="background-image: url('https://readdy.ai/api/search-image?query=smartphone%20scanning%20wine%20bottle%20label%20with%20AR%20overlay%2C%20modern%20wine%20cellar%20background%2C%20clean%20technology%20interface%2C%20purple%20and%20amber%20lighting%2C%20professional%20photography%20style&width=400&height=300&seq=wine-scan-guide&orientation=landscape'); background-size: cover; background-position: center;"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">ワインスキャン完全ガイド</h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">1</span>
+                                <p>アプリを開き、カメラアイコンをタップ</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">2</span>
+                                <p>ワインラベル全体を画面内に収める</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">3</span>
+                                <p>ピントが合うまで待ち、シャッターボタンをタップ</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">4</span>
+                                <p>認識結果を確認し、詳細情報を閲覧</p>
+                            </div>
+                        </div>
+                        <button class="mt-4 text-primary font-medium hover:text-purple-700 transition-colors">詳細ガイドを見る →</button>
+                    </div>
+                </div>
+
+                <!-- 音声チャットガイド -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-amber-100 to-amber-200" style="background-image: url('https://readdy.ai/api/search-image?query=people%20having%20wine%20tasting%20conversation%20with%20translation%20interface%2C%20elegant%20wine%20bar%20setting%2C%20modern%20technology%20overlay%2C%20warm%20amber%20lighting%2C%20sophisticated%20atmosphere&width=400&height=300&seq=voice-chat-guide&orientation=landscape'); background-size: cover; background-position: center;"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">音声チャット機能</h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">1</span>
+                                <p>チャット相手を選択し、通話を開始</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">2</span>
+                                <p>マイクボタンを押して話す</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">3</span>
+                                <p>リアルタイム翻訳で相手の言語に変換</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">4</span>
+                                <p>字幕表示で内容を確認</p>
+                            </div>
+                        </div>
+                        <button class="mt-4 text-secondary font-medium hover:text-amber-600 transition-colors">詳細ガイドを見る →</button>
+                    </div>
+                </div>
+
+                <!-- 翻訳設定ガイド -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-green-100 to-green-200" style="background-image: url('https://readdy.ai/api/search-image?query=multilingual%20interface%20showing%20different%20languages%2C%20wine%20education%20content%2C%20translation%20settings%20screen%2C%20modern%20app%20design%2C%20clean%20green%20color%20scheme&width=400&height=300&seq=translation-guide&orientation=landscape'); background-size: cover; background-position: center;"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">翻訳機能設定</h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">1</span>
+                                <p>設定メニューから言語設定を選択</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">2</span>
+                                <p>母国語と翻訳先言語を設定</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">3</span>
+                                <p>字幕・音声の表示設定を調整</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <span class="bg-green-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-medium">4</span>
+                                <p>翻訳品質の設定を選択</p>
+                            </div>
+                        </div>
+                        <button class="mt-4 text-green-600 font-medium hover:text-green-700 transition-colors">詳細ガイドを見る →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- トラブルシューティング -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">トラブルシューティング</h2>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center bg-red-100 rounded-full mr-3">
+                                <i class="ri-error-warning-line text-red-600"></i>
+                            </div>
+                            接続に関する問題
+                        </h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="border-l-4 border-red-200 pl-4">
+                                <p class="font-medium text-gray-900">インターネットに接続できない</p>
+                                <p>Wi-Fi またはモバイルデータの接続を確認してください。設定からネットワーク状況をチェックし、必要に応じて再接続してください。</p>
+                            </div>
+                            <div class="border-l-4 border-red-200 pl-4">
+                                <p class="font-medium text-gray-900">サーバーエラーが発生する</p>
+                                <p>一時的なサーバー障害の可能性があります。しばらく時間をおいてから再度お試しください。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                            <div class="w-6 h-6 flex items-center justify-center bg-yellow-100 rounded-full mr-3">
+                                <i class="ri-settings-3-line text-yellow-600"></i>
+                            </div>
+                            アプリの動作問題
+                        </h3>
+                        <div class="space-y-3 text-sm text-gray-600">
+                            <div class="border-l-4 border-yellow-200 pl-4">
+                                <p class="font-medium text-gray-900">アプリが頻繁にクラッシュする</p>
+                                <p>アプリを最新バージョンに更新し、デバイスを再起動してください。問題が続く場合はお問い合わせください。</p>
+                            </div>
+                            <div class="border-l-4 border-yellow-200 pl-4">
+                                <p class="font-medium text-gray-900">動作が重い・遅い</p>
+                                <p>バックグラウンドアプリを終了し、デバイスの空き容量を確認してください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせフォーム -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">お問い合わせ</h2>
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+                <p class="text-gray-600 mb-6">FAQ で解決できない問題がございましたら、以下のフォームからお気軽にお問い合わせください。</p>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">お名前 *</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="山田 太郎">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">メールアドレス *</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="example@email.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">お問い合わせ種別 *</label>
+                        <div class="relative">
+                            <select class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-8 appearance-none bg-white">
+                                <option>選択してください</option>
+                                <option>ワインスキャンに関する問題</option>
+                                <option>音声チャット機能の問題</option>
+                                <option>翻訳機能の問題</option>
+                                <option>アカウント・ログインの問題</option>
+                                <option>その他の技術的問題</option>
+                                <option>機能の要望・提案</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">緊急度</label>
+                        <div class="flex space-x-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="urgency" class="hidden">
+                                <div class="w-4 h-4 border-2 border-gray-300 rounded-full mr-2 flex items-center justify-center cursor-pointer">
+                                    <div class="w-2 h-2 bg-primary rounded-full hidden"></div>
+                                </div>
+                                <span class="text-sm text-gray-700">低</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="urgency" class="hidden" checked>
+                                <div class="w-4 h-4 border-2 border-primary rounded-full mr-2 flex items-center justify-center cursor-pointer">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <span class="text-sm text-gray-700">中</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="urgency" class="hidden">
+                                <div class="w-4 h-4 border-2 border-gray-300 rounded-full mr-2 flex items-center justify-center cursor-pointer">
+                                    <div class="w-2 h-2 bg-primary rounded-full hidden"></div>
+                                </div>
+                                <span class="text-sm text-gray-700">高</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">お問い合わせ内容 *</label>
+                        <textarea rows="6" class="w-full px-4 py-3 border border-gray-300 !rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none" placeholder="詳細な内容をご記入ください。エラーメッセージがある場合は、そちらも併せてお知らせください。"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <p class="text-sm text-gray-500">* 必須項目</p>
+                        <button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-purple-700 transition-colors whitespace-nowrap">
+                            送信する
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- サポート情報 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">サポート情報</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4">
+                        <i class="ri-time-line text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">サポート時間</h3>
+                    <p class="text-gray-600 text-sm mb-2">平日：9:00 - 18:00</p>
+                    <p class="text-gray-600 text-sm">土日祝：10:00 - 17:00</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mb-4">
+                        <i class="ri-mail-line text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">返信時間</h3>
+                    <p class="text-gray-600 text-sm mb-2">通常：24時間以内</p>
+                    <p class="text-gray-600 text-sm">プレミアム：4時間以内</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-lg mb-4">
+                        <i class="ri-customer-service-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">サポート方法</h3>
+                    <p class="text-gray-600 text-sm mb-2">メール・チャット</p>
+                    <p class="text-gray-600 text-sm">電話（プレミアムのみ）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 関連リソース -->
+        <section>
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">関連リソース</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-lg mb-4">
+                        <i class="ri-play-circle-line text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">動画チュートリアル</h3>
+                    <p class="text-gray-600 text-sm">機能の使い方を動画で学習</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-orange-100 rounded-lg mb-4">
+                        <i class="ri-file-pdf-line text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">PDF ガイド</h3>
+                    <p class="text-gray-600 text-sm">詳細なマニュアルをダウンロード</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-indigo-100 rounded-lg mb-4">
+                        <i class="ri-discuss-line text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">コミュニティ</h3>
+                    <p class="text-gray-600 text-sm">ユーザー同士で情報交換</p>
+                </a>
+                <a href="#" class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="w-12 h-12 flex items-center justify-center bg-pink-100 rounded-lg mb-4">
+                        <i class="ri-lightbulb-line text-2xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">ヒント集</h3>
+                    <p class="text-gray-600 text-sm">効果的な使い方のコツ</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl text-primary mb-4">logo</div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ワインの世界をもっと身近に。<br>
+                        言語の壁を越えて、世界中のワイン愛好家とつながりましょう。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">サポート</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ヘルプセンター</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">よくある質問</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">お問い合わせ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">コミュニティ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">機能</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">ワインスキャン</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">音声チャット</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">リアルタイム翻訳</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">ワイン辞典</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">会社情報</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">会社概要</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">利用規約</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">採用情報</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© 2025 WaiWine. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-twitter-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-facebook-line"></i>
+                        </div>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-instagram-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAQ アコーディオン機能 -->
+    <script id="faq-accordion">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const button = item.querySelector('button');
+                const content = item.querySelector('.faq-content');
+                const arrow = item.querySelector('.faq-arrow');
+                
+                button.addEventListener('click', () => {
+                    const isOpen = !content.classList.contains('hidden');
+                    
+                    if (isOpen) {
+                        content.classList.add('hidden');
+                        arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.classList.remove('hidden');
+                        arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- ラジオボタン機能 -->
+    <script id="radio-buttons">
+        document.addEventListener('DOMContentLoaded', function() {
+            const radioInputs = document.querySelectorAll('input[type="radio"]');
+            
+            radioInputs.forEach(input => {
+                const container = input.parentElement;
+                const circle = container.querySelector('div');
+                const dot = circle.querySelector('div');
+                
+                input.addEventListener('change', function() {
+                    // 同じ name の他のラジオボタンをリセット
+                    document.querySelectorAll(`input[name="${this.name}"]`).forEach(otherInput => {
+                        if (otherInput !== this) {
+                            const otherContainer = otherInput.parentElement;
+                            const otherCircle = otherContainer.querySelector('div');
+                            const otherDot = otherCircle.querySelector('div');
+                            
+                            otherCircle.classList.remove('border-primary');
+                            otherCircle.classList.add('border-gray-300');
+                            otherDot.classList.add('hidden');
+                        }
+                    });
+                    
+                    // 選択されたラジオボタンを更新
+                    if (this.checked) {
+                        circle.classList.remove('border-gray-300');
+                        circle.classList.add('border-primary');
+                        dot.classList.remove('hidden');
+                    }
+                });
+                
+                // 初期状態の設定
+                if (input.checked) {
+                    circle.classList.remove('border-gray-300');
+                    circle.classList.add('border-primary');
+                    dot.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

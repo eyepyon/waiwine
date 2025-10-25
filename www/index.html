@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WaiWine - ワインで繋がる新しい出会い</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#7B2D26',secondary:'#D4A574'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+</style>
+</head>
+<body class="bg-stone-50 min-h-screen">
+<header class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex justify-between items-center">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-wine-glass-line text-white text-xl"></i>
+</div>
+</div>
+<span class="font-['Pacifico'] text-2xl text-primary">WaiWine</span>
+</div>
+<div class="flex items-center space-x-6">
+<nav class="hidden md:flex space-x-8">
+<a href="#features" class="text-gray-700 hover:text-primary transition-colors">機能</a>
+<a href="#how-it-works" class="text-gray-700 hover:text-primary transition-colors">使い方</a>
+<a href="#premium" class="text-gray-700 hover:text-primary transition-colors">プレミアム体験</a>
+</nav>
+<div class="flex items-center bg-gray-100 rounded-full p-1">
+<button id="lang-ja" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap bg-primary text-white">
+日本語
+</button>
+<button id="lang-en" class="px-3 py-1 rounded-full text-sm font-medium transition-all !rounded-button whitespace-nowrap text-gray-600 hover:text-primary">
+English
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<section class="relative min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=elegant%20wine%20cellar%20with%20warm%20lighting%2C%20luxury%20wine%20bottles%20on%20wooden%20shelves%2C%20sophisticated%20atmosphere%2C%20soft%20ambient%20lighting%2C%20premium%20wine%20collection%2C%20left%20side%20has%20subtle%20gradient%20overlay%20for%20text%20readability%2C%20modern%20minimalist%20design&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-r from-stone-50/95 via-stone-50/80 to-transparent"></div>
+<div class="relative w-full max-w-7xl mx-auto px-6 py-20">
+<div class="max-w-2xl">
+<h1 id="hero-title" class="text-5xl font-bold text-gray-900 mb-6 leading-tight">
+ワインで繋がる<br>
+新しい<span class="text-primary">出会い</span>
+</h1>
+<p id="hero-subtitle" class="text-xl text-gray-700 mb-8 leading-relaxed">
+スマホでワインをスキャンするだけで、同じワインを愛する人とリアルタイム音声チャット。高級ワイン愛好家との特別な出会いが待っています。
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">
+<span id="cta-scan">今すぐスキャンして始める</span>
+</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap">
+<span id="cta-learn">詳しく見る</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<section id="how-it-works" class="py-20 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 id="how-title" class="text-4xl font-bold text-gray-900 mb-4">簡単 3 ステップ</h2>
+<p id="how-subtitle" class="text-xl text-gray-600">ワインをスキャンするだけで、世界中の愛好家と繋がれます</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-camera-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 id="step1-title" class="text-xl font-semibold text-gray-900 mb-3">1. スキャン</h3>
+<p id="step1-desc" class="text-gray-600">ワインのラベルまたはバーコードをスマホでスキャン</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-user-search-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 id="step2-title" class="text-xl font-semibold text-gray-900 mb-3">2. マッチング</h3>
+<p id="step2-desc" class="text-gray-600">同じワインを飲んでいる人を自動で見つけます</p>
+</div>
+<div class="text-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-mic-line text-primary text-2xl"></i>
+</div>
+</div>
+<h3 id="step3-title" class="text-xl font-semibold text-gray-900 mb-3">3. チャット</h3>
+<p id="step3-desc" class="text-gray-600">リアルタイム翻訳付きで世界中の人と会話</p>
+</div>
+</div>
+</div>
+</section>
+<section id="features" class="py-20 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 id="features-title" class="text-4xl font-bold text-gray-900 mb-4">革新的な機能</h2>
+<p id="features-subtitle" class="text-xl text-gray-600">最新技術でワイン愛好家同士を繋ぐ</p>
+</div>
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<div>
+<div class="space-y-8">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-qr-scan-line text-primary"></i>
+</div>
+</div>
+<div>
+<h3 id="feature1-title" class="text-xl font-semibold text-gray-900 mb-2">AI ワイン認識</h3>
+<p id="feature1-desc" class="text-gray-600">高精度 AI がラベルやバーコードから瞬時にワインを識別</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-translate-2 text-primary"></i>
+</div>
+</div>
+<div>
+<h3 id="feature2-title" class="text-xl font-semibold text-gray-900 mb-2">リアルタイム翻訳</h3>
+<p id="feature2-desc" class="text-gray-600">字幕・吹き替え両対応で言語の壁を越えた会話を実現</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-vip-crown-line text-primary"></i>
+</div>
+</div>
+<div>
+<h3 id="feature3-title" class="text-xl font-semibold text-gray-900 mb-2">プレミアムマッチング</h3>
+<p id="feature3-desc" class="text-gray-600">高級ワインほど富裕層との出会いの可能性が高まります</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=modern%20smartphone%20displaying%20wine%20scanning%20app%20interface%2C%20elegant%20wine%20bottle%20being%20scanned%2C%20clean%20minimal%20app%20design%2C%20voice%20chat%20interface%20with%20translation%20subtitles%2C%20premium%20wine%20collection%20background%2C%20sophisticated%20technology%20demonstration&width=600&height=700&seq=features1&orientation=portrait"
+alt="WaiWine App Interface"
+class="w-full h-auto rounded-2xl shadow-2xl object-top">
+</div>
+</div>
+</div>
+</section>
+<section id="premium" class="py-20 px-6" style="background-image: url('https://readdy.ai/api/search-image?query=luxury%20wine%20tasting%20room%20with%20elegant%20atmosphere%2C%20premium%20wine%20bottles%2C%20sophisticated%20networking%20event%2C%20wealthy%20wine%20enthusiasts%20in%20conversation%2C%20warm%20ambient%20lighting%2C%20high-end%20wine%20collection%2C%20exclusive%20social%20gathering&width=1920&height=800&seq=premium1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="bg-black/60 absolute inset-0"></div>
+<div class="relative max-w-7xl mx-auto text-center text-white">
+<h2 id="premium-title" class="text-4xl font-bold mb-6">憧れの富裕層との出会い</h2>
+<p id="premium-subtitle" class="text-xl mb-8 max-w-3xl mx-auto">
+高級ワインを愛する資産家や成功者との特別な繋がりを築きませんか？これまで憧れていた方々との親密な関係が、ワイン一本から始まります。
+</p>
+<div class="grid md:grid-cols-3 gap-8 mt-16">
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+<div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-money-dollar-circle-line text-secondary text-2xl"></i>
+</div>
+</div>
+<h3 id="premium-card1-title" class="text-xl font-semibold mb-3">投資家との出会い</h3>
+<p id="premium-card1-desc" class="text-white/80">成功した投資家や起業家との貴重な人脈を構築</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+<div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-building-line text-secondary text-2xl"></i>
+</div>
+</div>
+<h3 id="premium-card2-title" class="text-xl font-semibold mb-3">経営者とのネットワーク</h3>
+<p id="premium-card2-desc" class="text-white/80">各業界のトップリーダーとの特別な関係を築く</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+<div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-global-line text-secondary text-2xl"></i>
+</div>
+</div>
+<h3 id="premium-card3-title" class="text-xl font-semibold mb-3">国際的な繋がり</h3>
+<p id="premium-card3-desc" class="text-white/80">世界中の富裕層との国境を越えた関係を構築</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-6 bg-primary text-white text-center">
+<div class="max-w-4xl mx-auto">
+<h2 id="cta-title" class="text-4xl font-bold mb-6">今すぐ特別な出会いを始めませんか？</h2>
+<p id="cta-subtitle" class="text-xl mb-8 opacity-90">
+あなたの人生を変える出会いが、ワイン一本から始まります
+</p>
+<a href="https://wai.wine:3000/"><button class="bg-white text-primary px-12 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors !rounded-button whitespace-nowrap">
+<span id="cta-start">WaiWine を始める</span>
+</button></a>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-white py-12 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<div class="flex items-center space-x-3 mb-4">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-wine-glass-line text-white"></i>
+</div>
+</div>
+<span class="font-['Pacifico'] text-xl text-white">WaiWine</span>
+</div>
+<p id="footer-desc" class="text-gray-400">ワインで繋がる新しい出会いのプラットフォーム</p>
+</div>
+<div>
+<h4 id="footer-service" class="font-semibold mb-4">サービス</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="#" id="footer-scan" class="hover:text-white transition-colors">ワインスキャン</a></li>
+<li><a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/fb90c66b-d0cc-491b-aac0-6e4c114f7e29" data-readdy="true" id="footer-chat" class="hover:text-white transition-colors">ボイスチャット</a></li>
+<li><a href="#" id="footer-translation" class="hover:text-white transition-colors">リアルタイム翻訳</a></li>
+</ul>
+</div>
+<div>
+<h4 id="footer-support" class="font-semibold mb-4">サポート</h4>
+<ul class="space-y-2 text-gray-400">
+<li><a href="https://readdy.ai/home/cc775e0d-3489-4721-a956-27587688e8b9/04458ec3-34a8-4a40-b12d-a9289ee04df3" data-readdy="true" id="footer-help" class="hover:text-white transition-colors">ヘルプセンター</a></li>
+<li><a href="#" id="footer-contact" class="hover:text-white transition-colors">お問い合わせ</a></li>
+<li><a href="#" id="footer-privacy" class="hover:text-white transition-colors">プライバシーポリシー</a></li>
+</ul>
+</div>
+<div>
+<h4 id="footer-connect" class="font-semibold mb-4">フォローする</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-twitter-x-line text-gray-400"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-instagram-line text-gray-400"></i>
+</div>
+</a>
+<a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-facebook-line text-gray-400"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 WaiWine. All rights reserved. | <a href="https://wai.wine/" class="hover:text-white transition-colors">wai.wine</a></p>
+</div>
+</div>
+</footer>
+<script id="language-toggle">
+document.addEventListener('DOMContentLoaded', function() {
+const langJa = document.getElementById('lang-ja');
+const langEn = document.getElementById('lang-en');
+const translations = {
+ja: {
+'hero-title': 'ワインで繋がる<br>新しい<span class="text-primary">出会い</span>',
+'hero-subtitle': 'スマホでワインをスキャンするだけで、同じワインを愛する人とリアルタイム音声チャット。高級ワイン愛好家との特別な出会いが待っています。',
+'cta-scan': '今すぐスキャンして始める',
+'cta-learn': '詳しく見る',
+'how-title': '簡単 3 ステップ',
+'how-subtitle': 'ワインをスキャンするだけで、世界中の愛好家と繋がれます',
+'step1-title': '1. スキャン',
+'step1-desc': 'ワインのラベルまたはバーコードをスマホでスキャン',
+'step2-title': '2. マッチング',
+'step2-desc': '同じワインを飲んでいる人を自動で見つけます',
+'step3-title': '3. チャット',
+'step3-desc': 'リアルタイム翻訳付きで世界中の人と会話',
+'features-title': '革新的な機能',
+'features-subtitle': '最新技術でワイン愛好家同士を繋ぐ',
+'feature1-title': 'AI ワイン認識',
+'feature1-desc': '高精度 AI がラベルやバーコードから瞬時にワインを識別',
+'feature2-title': 'リアルタイム翻訳',
+'feature2-desc': '字幕・吹き替え両対応で言語の壁を越えた会話を実現',
+'feature3-title': 'プレミアムマッチング',
+'feature3-desc': '高級ワインほど富裕層との出会いの可能性が高まります',
+'premium-title': '憧れの富裕層との出会い',
+'premium-subtitle': '高級ワインを愛する資産家や成功者との特別な繋がりを築きませんか？これまで憧れていた方々との親密な関係が、ワイン一本から始まります。',
+'premium-card1-title': '投資家との出会い',
+'premium-card1-desc': '成功した投資家や起業家との貴重な人脈を構築',
+'premium-card2-title': '経営者とのネットワーク',
+'premium-card2-desc': '各業界のトップリーダーとの特別な関係を築く',
+'premium-card3-title': '国際的な繋がり',
+'premium-card3-desc': '世界中の富裕層との国境を越えた関係を構築',
+'cta-title': '今すぐ特別な出会いを始めませんか？',
+'cta-subtitle': 'あなたの人生を変える出会いが、ワイン一本から始まります',
+'cta-start': 'WaiWine を始める',
+'footer-desc': 'ワインで繋がる新しい出会いのプラットフォーム',
+'footer-service': 'サービス',
+'footer-scan': 'ワインスキャン',
+'footer-chat': 'ボイスチャット',
+'footer-translation': 'リアルタイム翻訳',
+'footer-support': 'サポート',
+'footer-help': 'ヘルプセンター',
+'footer-contact': 'お問い合わせ',
+'footer-privacy': 'プライバシーポリシー',
+'footer-connect': 'フォローする'
+},
+en: {
+'hero-title': 'Connect Through Wine<br>Discover New <span class="text-primary">Relationships</span>',
+'hero-subtitle': 'Simply scan wine labels with your smartphone to connect with fellow wine lovers through real-time voice chat. Special encounters with premium wine enthusiasts await you.',
+'cta-scan': 'Start Scanning Now',
+'cta-learn': 'Learn More',
+'how-title': 'Simple 3 Steps',
+'how-subtitle': 'Connect with wine enthusiasts worldwide just by scanning wine',
+'step1-title': '1. Scan',
+'step1-desc': 'Scan wine labels or barcodes with your smartphone',
+'step2-title': '2. Match',
+'step2-desc': 'Automatically find people drinking the same wine',
+'step3-title': '3. Chat',
+'step3-desc': 'Converse with people worldwide using real-time translation',
+'features-title': 'Innovative Features',
+'features-subtitle': 'Connecting wine enthusiasts with cutting-edge technology',
+'feature1-title': 'AI Wine Recognition',
+'feature1-desc': 'High-precision AI instantly identifies wines from labels or barcodes',
+'feature2-title': 'Real-time Translation',
+'feature2-desc': 'Break language barriers with subtitle and voice-over translation',
+'feature3-title': 'Premium Matching',
+'feature3-desc': 'Higher-end wines increase chances of connecting with affluent individuals',
+'premium-title': 'Connect with Affluent Wine Connoisseurs',
+'premium-subtitle': 'Build special connections with wealthy wine lovers and successful individuals. Intimate relationships with people you\'ve always admired can start with just one bottle of wine.',
+'premium-card1-title': 'Meet Investors',
+'premium-card1-desc': 'Build valuable networks with successful investors and entrepreneurs',
+'premium-card2-title': 'Executive Networks',
+'premium-card2-desc': 'Forge special relationships with industry leaders',
+'premium-card3-title': 'Global Connections',
+'premium-card3-desc': 'Build cross-border relationships with wealthy individuals worldwide',
+'cta-title': 'Ready to Start Special Encounters?',
+'cta-subtitle': 'Life-changing encounters begin with a single bottle of wine',
+'cta-start': 'Start WaiWine',
+'footer-desc': 'A new platform for wine-based connections',
+'footer-service': 'Services',
+'footer-scan': 'Wine Scanning',
+'footer-chat': 'Voice Chat',
+'footer-translation': 'Real-time Translation',
+'footer-support': 'Support',
+'footer-help': 'Help Center',
+'footer-contact': 'Contact Us',
+'footer-privacy': 'Privacy Policy',
+'footer-connect': 'Follow Us'
+}
+};
+function switchLanguage(lang) {
+Object.keys(translations[lang]).forEach(key => {
+const element = document.getElementById(key);
+if (element) {
+element.innerHTML = translations[lang][key];
+}
+});
+if (lang === 'ja') {
+langJa.classList.add('bg-primary', 'text-white');
+langJa.classList.remove('text-gray-600');
+langEn.classList.remove('bg-primary', 'text-white');
+langEn.classList.add('text-gray-600');
+document.documentElement.lang = 'ja';
+document.title = 'WaiWine - ワインで繋がる新しい出会い';
+} else {
+langEn.classList.add('bg-primary', 'text-white');
+langEn.classList.remove('text-gray-600');
+langJa.classList.remove('bg-primary', 'text-white');
+langJa.classList.add('text-gray-600');
+document.documentElement.lang = 'en';
+document.title = 'WaiWine - Connect Through Wine, Discover New Relationships';
+}
+}
+langJa.addEventListener('click', () => switchLanguage('ja'));
+langEn.addEventListener('click', () => switchLanguage('en'));
+});
+</script>
+<script id="smooth-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').substring(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
