@@ -1,14 +1,12 @@
 /**
  * Composable for language management and switching
  */
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useAuthStore } from '@/stores/auth'
 import { availableLanguages } from '@/i18n'
 
 export function useLanguage() {
   const { locale } = useI18n()
-  const authStore = useAuthStore()
   
   const loading = ref(false)
   const error = ref(null)
@@ -36,12 +34,12 @@ export function useLanguage() {
   }
   
   // Initialize language from various sources
-  const initializeLanguage = () => {
+  const initializeLanguage = (userLanguage = null) => {
     let targetLanguage = 'ja' // default
     
     // Priority: User profile > localStorage > browser > default
-    if (authStore.isAuthenticated && authStore.user?.main_language) {
-      targetLanguage = authStore.user.main_language
+    if (userLanguage) {
+      targetLanguage = userLanguage
     } else {
       const stored = getStoredLanguage()
       if (stored) {
@@ -58,7 +56,7 @@ export function useLanguage() {
   }
   
   // Change language
-  const changeLanguage = async (languageCode) => {
+  const changeLanguage = async (languageCode, updateBackend = true) => {
     if (!isLanguageSupported(languageCode)) {
       throw new Error(`Unsupported language: ${languageCode}`)
     }
@@ -77,11 +75,22 @@ export function useLanguage() {
       // Store in localStorage
       localStorage.setItem('user-language', languageCode)
       
-      // Update user preference in backend if authenticated
-      if (authStore.isAuthenticated) {
-        const success = await authStore.updateUserLanguage(languageCode)
-        if (!success) {
-          throw new Error('Failed to update language preference on server')
+      // Update user preference in backend if authenticated and requested
+      if (updateBackend) {
+        const token = localStorage.getItem('auth-token')
+        if (token) {
+          const response = await fetch('/api/user/language', {
+            method: 'PUT',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ language: languageCode })
+          })
+          
+          if (!response.ok) {
+            throw new Error('Failed to update language preference on server')
+          }
         }
       }
       
@@ -120,20 +129,6 @@ export function useLanguage() {
     const rtlLanguages = ['ar', 'he', 'fa']
     return rtlLanguages.includes(code) ? 'rtl' : 'ltr'
   }
-  
-  // Watch for auth state changes to sync language
-  watch(
-    () => authStore.isAuthenticated,
-    (isAuthenticated) => {
-      if (isAuthenticated && authStore.user?.main_language) {
-        const userLanguage = authStore.user.main_language
-        if (userLanguage !== locale.value && isLanguageSupported(userLanguage)) {
-          locale.value = userLanguage
-          localStorage.setItem('user-language', userLanguage)
-        }
-      }
-    }
-  )
   
   return {
     // State

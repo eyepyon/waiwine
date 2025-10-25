@@ -2,7 +2,6 @@
  * Vue Router configuration
  */
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAuthStore } from '@/stores/auth'
 
 // Lazy load components
 const Home = () => import('@/views/Home.vue')
@@ -70,7 +69,9 @@ const router = createRouter({
 })
 
 // Navigation guards
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  // Import auth store dynamically to avoid circular dependency
+  const { useAuthStore } = await import('@/stores/auth')
   const authStore = useAuthStore()
   
   if (to.meta.requiresAuth && !authStore.isAuthenticated) {
